@@ -27,24 +27,32 @@ export const links = [
     name: "Experience",
     hash: "#experience",
   },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
 ] as const;
 
 export const experiencesData = [
   {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description",
+    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
   {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description",
+    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019",
+  },  {
+    title: "Template Title ",
+    location: "Template Location",
+    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019",
+  },  {
+    title: "Template Title ",
+    location: "Template Location",
+    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },

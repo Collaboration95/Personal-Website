@@ -3,6 +3,8 @@ import Skills from "@/components/skills";
 import About from "@/components/about";
 import SectionDivider from "@/components/section-divider";
 import Intro from "@/components/intro";
+import Experience from "@/components/experience";
+import Footer from "@/components/footer";
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
@@ -11,6 +13,8 @@ export default function Home() {
       <About />
       <Projects />
       <Skills/>
+      <Experience />
+      <Footer />
     </main>
   );
 }
