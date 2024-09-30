@@ -45,3 +45,9 @@ Deploy webite
 Update resume 
 Add the themes 
 Change contact me to a linkedin page  ?
+
+## List of Things to Fix 
+
+Fix theme to always use light-mode 
+Change CTA for contact me here to a linkedin message ?
+ 
