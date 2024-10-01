@@ -13,9 +13,9 @@ export default function Home() {
       <SectionDivider />
       <About />
       <Projects />
-      <Skills/>
+      <Skills />
       <Experience />
-      {/* <ThemeToggleComponent/>  */} 
+      {/* <ThemeToggleComponent/>  */}
       {/* // component for testing */}
       <Footer />
     </main>

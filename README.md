@@ -35,19 +35,17 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+### Stuff to do
 
-
-### Stuff to do 
 Get Image assets for websites
-Fill in Lorem ipsum text 
-Add link to pdf 
-Deploy webite 
-Update resume 
-Add the themes 
-Change contact me to a linkedin page  ?
+Fill in Lorem ipsum text
+Add link to pdf
+Deploy webite
+Update resume
+Add the themes
+Change contact me to a linkedin page ?
 
-## List of Things to Fix 
+## List of Things to Fix
 
-Fix theme to always use light-mode 
+Fix theme to always use light-mode
 Change CTA for contact me here to a linkedin message ?
- 
