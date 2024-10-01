@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import image from "@/public/corpcomment.png";
+import image from "@/public/intro-alone.jpeg";
 import { FaGithubSquare } from "react-icons/fa";
 
 import { useSectionInView } from "@/lib/hooks";
@@ -32,7 +32,7 @@ export default function Intro() {
           >
             <Image
               src={image}
-              alt="Ricardo portrait"
+              alt="Guru Potrait"
               width="192"
               height="192"
               quality="95"
@@ -62,11 +62,13 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Guru</span> I&apos;m a{" "}
-        <span className="font-bold">Lorem Ipsum Dolor Sit Amet</span> with{" "}
-        <span className="font-bold">1 year</span> of experience. I enjoy eating{" "}
-        <span className="italic">pizzas</span>. My focus is{" "}
-        <span className="underline">on Fullstack</span>.
+        <span className="font-bold">Hi, I&apos;m Guru</span>
+        <br />
+        <span className="font-bold"> A final year CS Student @ SUTD</span> 
+        <br />
+        <span className="font-bold">Welcome to my website !</span>
+
+
       </motion.h1>
 
       <motion.div
@@ -81,10 +83,7 @@ export default function Intro() {
           href="https://www.linkedin.com/in/guruprasath3200/"
                target="_blank"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          // onClick={() => {
-          //   // setActiveSection("Contact");
-          //   // setTimeOfLastClick(Date.now());
-          // }}
+ 
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
