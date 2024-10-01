@@ -21,7 +21,7 @@ const fadeInAnimationVariants = {
 };
 
 export default function Skills() {
-  const { ref } = useSectionInView({sectionName:"Skills"});
+  const { ref } = useSectionInView({ sectionName: "Skills" });
 
   return (
     <section

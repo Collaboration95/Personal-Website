@@ -33,26 +33,32 @@ export const experiencesData = [
   {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    description:
+      "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
   {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    description:
+      "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
-  },  {
+  },
+  {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    description:
+      "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
-  },  {
+  },
+  {
     title: "Template Title ",
     location: "Template Location",
-    description: "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
+    description:
+      "Template Description Lorem ispsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
