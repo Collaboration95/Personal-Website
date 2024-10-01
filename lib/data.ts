@@ -1,13 +1,13 @@
 import React from "react";
-// import { CgWorkAlt } from "react-icons/cg";
-// import { FaReact } from "react-icons/fa";
+import { FaCodeBranch } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import HealthMate from "@/public/HealthMate.png";
 import Breakout from "@/public/Breakout_C.png";
 import InvoiceHub from "@/public/InvoiceHub.png";
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
+import { IoCodeSlash } from "react-icons/io5";
+import AngryBirds from "@/public/angrybirdsspace.png";
+import AirconBot from "@/public/AirconBot.png";
 
 export const links = [
   {
@@ -36,7 +36,7 @@ export const experiencesData = [
     title: "Teaching Assistant (Intro to Python Programming)",
     location: "Singapore University of Technology",
     description:
-      "Facilitated Python instruction, mentored students, and managed IoT lab setup with Raspberry Pi.",
+      "Led Python instruction, simplified complex concepts, mentored students on coding projects, and set up IoT labs using Raspberry Pi.",
     icon: React.createElement(LuGraduationCap),
     date: "Nov 2021 - Jan 2022",
   },
@@ -44,19 +44,20 @@ export const experiencesData = [
     title: "Software Engineer Intern (R&D Dept)",
     location: "Primech A&P Pte Ltd",
     description:
-      "Enhanced robot dashboard with improved API (CRUD, JWT), UI updates, and refactored JavaScript. Supported cloud services and fixed bugs in the Python backend for IoT sensors.",
-    icon: React.createElement(LuGraduationCap),
+      "Optimized robot dashboard by enhancing API functionality (CRUD, JWT) and addressing UI/UX improvements. Refactored JavaScript code for maintainability, integrated task summary feature, and resolved bugs in Python-based IoT platform.",
+    icon: React.createElement(IoCodeSlash),
     date: "Aug 2023 - Jan 2024",
   },
   {
     title: "Software Engineer Intern (R&D Dept)",
     location: "Primech A&P Pte Ltd",
     description:
-      "Updated Flutter codebase, developed PHP personnel management app, created promotional video for CESG, and added documentation to a legacy project.",
-    icon: React.createElement(LuGraduationCap),
+      "Refactored legacy Flutter codebase, ensuring compatibility with the latest version. Designed and developed a custom PHP personnel management app, produced a promotional video showcased at CESG, and documented API usage for project maintainability.",
+    icon: React.createElement(FaCodeBranch),
     date: "Apr 2024 - Sep 2024",
   },
 ] as const;
+
 
 export const projectsData = [
   {
@@ -78,7 +79,7 @@ export const projectsData = [
     description:
       "Computer graphic cube physics simulation game on OpenGL using a self-built C++ physics engine.",
     tags: ["OpenGL", "C++", "Physics Engine"],
-    imageUrl: corpcommentImg,
+    imageUrl: AngryBirds,
   },
   {
     title: "Atari Breakout",
@@ -92,7 +93,7 @@ export const projectsData = [
     description:
       "Python bots for web scraping university aircon balances using BeautifulSoup and Selenium.",
     tags: ["Python", "BeautifulSoup", "Selenium"],
-    imageUrl: corpcommentImg,
+    imageUrl: AirconBot,
   },
 ] as const;
 
