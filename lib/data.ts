@@ -58,7 +58,6 @@ export const experiencesData = [
   },
 ] as const;
 
-
 export const projectsData = [
   {
     title: "HealthMate",
@@ -83,8 +82,7 @@ export const projectsData = [
   },
   {
     title: "Atari Breakout",
-    description:
-      "2D Breakout game made using C and SDL2 game library.",
+    description: "2D Breakout game made using C and SDL2 game library.",
     tags: ["C", "SDL2"],
     imageUrl: Breakout,
   },
@@ -96,8 +94,6 @@ export const projectsData = [
     imageUrl: AirconBot,
   },
 ] as const;
-
-
 
 export const skillsData = [
   "HTML",
@@ -128,3 +124,33 @@ export const skillsData = [
   "SDL2",
   "Selenium",
 ] as const;
+
+export const DependancyGraph = {
+  "HTML": "CSS, JavaScript",
+  "CSS": "HTML, Tailwind",
+  "JavaScript": "HTML, React, Node.js, Redux",
+  "TypeScript": "React, Node.js, Next.js",
+  "React": "JavaScript, TypeScript, Redux, Next.js, GraphQL, Apollo, Express",
+  "Next.js": "TypeScript, React",
+  "Node.js": "JavaScript, TypeScript, Express, MongoDB",
+  "Git": "Agile, Figma",
+  "Tailwind": "CSS",
+  "MongoDB": "Node.js, GraphQL, MySQL",
+  "Redux": "JavaScript, React",
+  "GraphQL": "React, MongoDB, Apollo",
+  "Apollo": "React, GraphQL",
+  "Express": "Node.js, React",
+  "Python": "Selenium",
+  "Java": "Firebase, Google Fitness",
+  "Firebase": null,
+  "Google Fitness": null,
+  "AWS OCR": null,
+  "MySQL": "MongoDB",
+  "Agile": "Git, Figma",
+  "Figma": "Agile, Git",
+  "OpenGL": "C++, C",
+  "C++": "OpenGL, SDL2",
+  "C": "OpenGL, SDL2",
+  "SDL2": "C++, C",
+  "Selenium": "Python",
+} as const;

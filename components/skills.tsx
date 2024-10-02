@@ -56,7 +56,7 @@ export default function Skills() {
                   // Apply hover effect if skill is hovered or it's a dependency of the hovered skill
                   "hover:bg-black hover:text-white": theme === "light",
                   "!bg-black text-white":
-                    hoveredSkill === key || dependencies.includes(hoveredSkill),
+                    hoveredSkill === key || (hoveredSkill && dependencies.includes(hoveredSkill)),
                 }
               )}
               key={index}

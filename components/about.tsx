@@ -17,12 +17,15 @@ export default function About() {
     >
       <h2 className="text-3xl font-medium capitalize mb-8">About me</h2>
       <p>
-      I&apos;m a Software Engineer passionate about building efficient and impactful solutions.
-      <br />
-       Currently pursuing a Computer Science Design (CSD) degree at SUTD, I&apos;ve gained hands-on experience in web development, IoT, and cloud-based applications through internships and personal projects.
-    <br />
-I love tackling challenging problems and constantly learning new technologies to improve my skills. When I&apos;m not coding, I enjoy listening to classical music and powerlifting.
-
+        I&apos;m a Software Engineer passionate about building efficient and
+        impactful solutions.
+        <br />
+        Currently pursuing a Computer Science Design (CSD) degree at SUTD,
+        I&apos;ve gained hands-on experience in web development, IoT, and
+        cloud-based applications through internships and personal projects.
+        <br />I love tackling challenging problems and constantly learning new
+        technologies to improve my skills. When I&apos;m not coding, I enjoy
+        listening to classical music and powerlifting.
       </p>
     </motion.section>
   );
