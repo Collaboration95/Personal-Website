@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCodeBranch } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
+
 import HealthMate from "@/public/HealthMate.png";
 import Breakout from "@/public/Breakout_C.png";
 import InvoiceHub from "@/public/InvoiceHub.png";
