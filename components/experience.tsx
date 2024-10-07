@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import SectionHeading from "./section-heading";
 import {
@@ -11,6 +10,15 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
+
+const timelineStyles = {
+  background: "rgba(255, 255, 255, 0.05)",
+  boxShadow: "none",
+  border: "2px solid rgba(0, 0, 0, 1)",
+  textAlign: "left",
+  padding: "1.3rem 2rem",
+}
+
 export default function Experience() {
   const { ref } = useSectionInView({ sectionName: "Experience" });
   const { theme } = useTheme();
@@ -18,21 +26,19 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
+      <VerticalTimeline lineColor="linear-gradient(#DECFD0, #D1D0DE)">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
               visible={true}
               contentStyle={{
+                ...timelineStyles, // Spread the common timelineStyles here
                 background:
                   theme === "light"
                     ? "rgba(255, 255, 255, 0.05)"
-                    : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
+                    : "rgba(255, 255, 255, 0.05)", // Override if needed
               }}
+              
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
