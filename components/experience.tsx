@@ -15,7 +15,7 @@ const timelineStyles = {
   background: "rgba(255, 255, 255, 0.05)",
   boxShadow: "none",
   border: "2px solid rgba(0, 0, 0, 1)",
-  textAlign: "left",
+  textAlign: "left" as const,
   padding: "1.3rem 2rem",
 }
 
