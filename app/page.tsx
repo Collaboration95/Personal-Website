@@ -23,7 +23,7 @@ export default function Home() {
     >
          <div
         className={clsx(
-          "absolute top-0 left-0 h-270rem] w-full -z-20 rounded-lg", // Positioned behind everything
+          "absolute top-0 left-0 h-[293rem] w-full -z-20 rounded-lg", // Positioned behind everything
           {
             "bg-gray-900": theme === "dark", // Dark background for dark mode
             "bg-white": theme === "light", // Light background for light mode
@@ -50,20 +50,7 @@ export default function Home() {
           }
         )}
       ></div>
-      {/* <div 
-      className={clsx(" absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] ",
-      {
-        " text-gray-950 bg-[#946263]": theme == "dark",
-        "bg-[#fbe2e3] text-white": theme == "light"
-      }
-      )}
-        ></div>
-      <div className={clsx("bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:",
-      {
-        " text-gray-950 bg-[#676394]": theme == "dark",
-        "bg-[#dbd7fb] text-white": theme == "light"
-      }        
-      )}></div> */}
+
         
       <Intro />
       <SectionDivider />

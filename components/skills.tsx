@@ -51,12 +51,11 @@ export default function Skills() {
           return (
             <motion.li
               className={clsx(
-                "bg-white shadow-lg borderBlack rounded-xl px-5 py-3 dark:bg-white/10 !dark:text-white/80 transition-colors delay-80",
+                "shadow-lg borderBlack rounded-xl px-5 py-3  transition-colors delay-80",
                 {
-                  // Apply hover effect if skill is hovered or it's a dependency of the hovered skill
-                  "hover:bg-black hover:text-white": theme === "light",
-                  "!bg-black text-white":
-                    hoveredSkill === key || (hoveredSkill && dependencies.includes(hoveredSkill)),
+                " bg-white/10 text-white/80" : theme=="dark", 
+                "!bg-white !text-black" :  theme == "dark" && (hoveredSkill === key || (hoveredSkill && dependencies.includes(hoveredSkill))),
+                  "!bg-black text-white" : theme=="light" && ( hoveredSkill === key || (hoveredSkill && dependencies.includes(hoveredSkill))) ,
                 }
               )}
               key={index}
