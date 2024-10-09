@@ -5,7 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeSwitch from "@/components/theme-switch";
+// import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
             <Header />
             {children}
           </ActiveSectionContextProvider>
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </ThemeContextProvider>
       </body>
     </html>

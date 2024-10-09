@@ -25,7 +25,7 @@ export default function Home() {
         className={clsx(
           "absolute top-0 left-0 h-[293rem] w-full -z-20 rounded-lg", // Positioned behind everything
           {
-            "bg-gray-900": theme === "dark", // Dark background for dark mode
+            "bg-gray-900 text-white": theme === "dark", // Dark background for dark mode
             "bg-white": theme === "light", // Light background for light mode
           }
         )}

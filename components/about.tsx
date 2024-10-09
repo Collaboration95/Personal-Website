@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import SectionHeading from "./section-heading";
 
 export default function About() {
   const { ref } = useSectionInView({ sectionName: "About" });
@@ -15,7 +16,9 @@ export default function About() {
       id="about"
       ref={ref}
     >
-      <h2 className="text-3xl font-medium capitalize mb-8">About me</h2>
+
+      <SectionHeading>About Me</SectionHeading>
+      
       <p>
         I&apos;m a Software Engineer passionate about building efficient and
         impactful solutions.
