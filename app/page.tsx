@@ -5,7 +5,7 @@ import SectionDivider from "@/components/section-divider";
 import Intro from "@/components/intro";
 import Experience from "@/components/experience";
 import Footer from "@/components/footer";
-// import ThemeToggleComponent from "@/components/test-theme";
+import ThemeToggleComponent from "@/components/test-theme";
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
@@ -15,7 +15,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
-      {/* <ThemeToggleComponent/>  */}
+      <ThemeToggleComponent/> 
       {/* // component for testing */}
       <Footer />
     </main>

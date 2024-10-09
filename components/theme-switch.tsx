@@ -6,7 +6,7 @@ import { BsMoon, BsSun } from "react-icons/bs";
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
-
+  console.log(theme);
   return (
     <button
       className={`fixed bottom-5 right-5 w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all
@@ -18,7 +18,9 @@ export default function ThemeSwitch() {
           ${theme === "light" ? "bg-gray-950 text-white" : "bg-white text-gray-950"}`}
       >
         {theme === "light" ? <BsSun /> : <BsMoon />}
+          
       </div>
+
     </button>
   );
 }

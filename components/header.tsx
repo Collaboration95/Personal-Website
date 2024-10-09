@@ -40,9 +40,9 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition", // Common hover state for light mode
                   {
-                    "dark:text-gray-500 dark:hover:text-gray-300":
+                    "dark:text-gray-300 dark:hover:text-gray-200 dark:hover:font-bold ":
                       theme === "dark",
-                    "dark:text-gray-300":
+                    "dark:text-white":
                       theme === "dark" && activeSection === link.name,
                     // Dark mode hover and default text color
                     "text-gray-950":
