@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${inter.className}
        bg-gray-50 text-gray-950  pt-28 sm:pt-36`}
-      >
+      >    
         <ThemeContextProvider>
 
           <ActiveSectionContextProvider>
