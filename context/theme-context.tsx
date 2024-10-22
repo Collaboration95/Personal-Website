@@ -15,6 +15,7 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
+// need to modify this for darkmode users 
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
