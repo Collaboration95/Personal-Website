@@ -8,13 +8,15 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import image from "@/public/intro-alone.jpeg";
 import { FaGithubSquare } from "react-icons/fa";
-
+import clsx from "clsx";
 import { useSectionInView } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 export default function Intro() {
   const { ref } = useSectionInView({ sectionName: "Home" });
-
+  const { theme } = useTheme();
   return (
+    
     <section
       ref={ref}
       id="home"
@@ -96,7 +98,13 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          className={clsx(" p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60",
+            {
+              "!text-blue-700": theme==="light",
+              "!text-white": theme==="dark"
+            }
+          )}
+        
           href="https://www.linkedin.com/in/guruprasath3200/"
           target="_blank"
         >
@@ -104,7 +112,13 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+                  className={clsx(" p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60",
+                    {
+                      "!text-black": theme==="light",
+                      "!text-white": theme==="dark"
+                    }
+                  )}
+
           href="https://github.com/Collaboration95"
           target="_blank"
         >
