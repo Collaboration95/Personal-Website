@@ -1,47 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Guru Prasath — personal portfolio
 
-## Getting Started
+This is a static-first Next.js App Router portfolio for Guru Prasath. The page
+is one continuous story: a photo-led introduction, a content-driven timeline of
+real projects and work notes, and a closing contact section.
 
-First, run the development server:
+The active visual direction is Warm Paper. See [DESIGN.md](DESIGN.md) for the
+palette, type choices, motion boundaries, and layout intent. See the companion
+delivery notes for the rebuild audit:
+
+- [REBUILD_STATUS.md](REBUILD_STATUS.md) — current delivery state and known limits
+- [CONTENT_INVENTORY.md](CONTENT_INVENTORY.md) — verified copy and link sources
+- [ASSET_INVENTORY.md](ASSET_INVENTORY.md) — image provenance and optimization notes
+- [ARCHITECTURE_DECISION.md](ARCHITECTURE_DECISION.md) — why Next.js remains the stack
+- [VERCEL_AUDIT.md](VERCEL_AUDIT.md) — safe preview/production route
+
+## Local development
+
+Requires Node.js and npm.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>. The same commands are available as Make targets:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+make install
+make dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Useful checks:
 
-## Learn More
+```bash
+make lint       # Next lint
+make typecheck  # TypeScript without emit
+make test       # content/assets validation
+make check      # lint + typecheck + content test + production build
+make build      # production build only
+make start      # serve the production build locally
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Updating content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The source of truth is [`lib/data.ts`](lib/data.ts). Keep personal details,
+project descriptions, technology labels, periods, social URLs, and alt text
+there. The visual components in `components/` should render the data rather
+than become a second content store.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Project links are intentionally absent until a repository or live URL is
+verified. Add them to the typed model and the project renderer together when
+they become available. Do not add a live Instagram feed; add only user-owned
+photo exports with a source and alt-text note in `ASSET_INVENTORY.md`.
 
-## Deploy on Vercel
+## Images and fonts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Images are imported through `next/image`, which reserves layout space and emits
+responsive optimized variants. The portrait is the only verified personal
+photo currently available; project visuals were restored from this repository's
+Git history. Outfit, Figtree, and JetBrains Mono are loaded through
+`next/font/google` with `swap` display and system fallbacks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
 
-
-
-### Stuff to do 
-Get Image assets for websites
-Fill in Lorem ipsum text 
-Add link to pdf 
-Deploy webite 
-Update resume 
-Add the themes 
-Change contact me to a linkedin page  ?
+The repository's GitHub default branch is `main`, and GitHub reports the
+connected Vercel homepage as
+<https://guruprasathgopal-collaboration95s-projects.vercel.app>. Push a feature
+branch to create a Vercel preview through the existing integration, verify that
+preview in a browser, then merge to `main` for production. No Vercel token,
+environment secret, or custom-domain setting belongs in this repository.
