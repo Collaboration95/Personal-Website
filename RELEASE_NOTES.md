@@ -31,9 +31,12 @@ assets recovered from the repository's own history.
 ## Deployment
 
 - Preview branch: `codex/portfolio-integration`.
-- Preview URL: pending connected Vercel deployment.
+- Preview URL: `https://guruprasathgopal-5259bvwoz-collaboration95s-projects.vercel.app`
+  (deployment `6038981910`, commit `4db6a43`, build succeeded).
 - Production URL: `https://guruprasathgopal-collaboration95s-projects.vercel.app`.
-- Production merge: intentionally pending preview verification.
+- Hosted preview verification: blocked because the URL redirects to Vercel
+  Authentication and no session/bypass token is available in this workspace.
+- Production merge: intentionally pending authenticated preview verification.
 
 ## Known follow-ups
 

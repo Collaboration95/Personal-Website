@@ -2,8 +2,8 @@
 
 ## Current phase
 
-Phase 8: release candidate complete locally; Vercel preview requested through
-the repository integration.
+Phase 8: release candidate complete locally; Vercel preview built, hosted
+verification blocked by Vercel Authentication.
 
 ## Baseline
 
@@ -43,12 +43,15 @@ the repository integration.
 - `designmd lint DESIGN.md` passed with zero errors; it reports only informational
   omission data and palette-reference/contrast warnings for the documented token
   mirror.
-- Browser verification passed for server-rendered content, chapter navigation,
-  keyboard activation, history back/forward, responsive widths from 320px to
-  1440px, no horizontal overflow, valid metadata/resources, and clean runtime
-  error logs after the first-project image priority fix.
+- Browser verification passed locally for server-rendered content, chapter
+  navigation, keyboard activation, history back/forward, responsive widths from
+  320px to 1440px, no horizontal overflow, and valid metadata/resources. No
+  critical local runtime errors were observed; the dev session retains
+  non-blocking historical Next image LCP warnings from earlier scroll audits.
 - Computer-view verification passed in Chrome against `http://localhost:3000/`;
   the hero and HealthMate chapter were opened and visually inspected.
+- Vercel deployment `6038981910` for commit `4db6a43` completed successfully and
+  produced the preview URL recorded below.
 
 ## Blockers / limitations
 
@@ -56,11 +59,16 @@ the repository integration.
 - Vercel CLI is not installed and no local Vercel project metadata is present.
   Preview/production deployment therefore depends on the connected Git/Vercel
   integration and its returned deployment URL.
+- The preview URL redirects to `vercel.com/login` because Vercel Deployment
+  Protection is enabled. No Vercel session or bypass token is available in the
+  workspace, so hosted visual/console verification and a safe production merge
+  cannot be completed from this environment.
 
 ## Release-candidate delivery
 
 - Integration branch: `codex/portfolio-integration`.
-- Preview: pending branch push and Vercel deployment signal.
-- Production: not merged or claimed until the actual preview is opened and
-  checked.
+- Preview: `https://guruprasathgopal-5259bvwoz-collaboration95s-projects.vercel.app`
+  (deployment succeeded; hosted inspection is blocked by authentication).
+- Production: not merged or claimed until the authenticated preview is opened
+  and checked.
 - Rollback reference: pre-rebuild commit `9da9d19` (`Added agents and design`).
