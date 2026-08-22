@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Keep an active dev server from sharing build output with `next build`.
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   async headers() {
     return [
       {

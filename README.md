@@ -30,6 +30,9 @@ make install
 make dev
 ```
 
+Development output is isolated in `.next-dev`, so running a production build
+does not corrupt an active dev server.
+
 Useful checks:
 
 ```bash
