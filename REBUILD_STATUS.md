@@ -52,8 +52,8 @@ hosted verification still blocked by Vercel Authentication.
   methods bridge, provenance chapter, archive, contact section, and narrow
   layout were visually inspected. Next image geometry warnings were removed by
   reserving aspect-ratio space on media wrappers.
-- Added a checked-in `premium-audit.json` containing the zero-finding strict
-  audit result.
+- The zero-finding strict audit result was generated locally; its JSON output
+  remains ignored because it embeds a machine-specific project path.
 - Vercel deployment `6038981910` for commit `4db6a43` completed successfully and
   produced the preview URL recorded below.
 
