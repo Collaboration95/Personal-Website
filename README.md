@@ -59,11 +59,12 @@ photo exports with a source and alt-text note in `ASSET_INVENTORY.md`.
 ## Images and fonts
 
 Images are imported through `next/image`, which reserves layout space and emits
-responsive optimized variants. The portrait is the only verified personal
-photo currently available; most project visuals were restored from this
-repository's Git history, with the DetectT demo copied from its public
-repository. Outfit, Figtree, and JetBrains Mono are loaded through
-`next/font/google` with `swap` display and system fallbacks.
+responsive optimized variants. The hero starts with the existing portrait and
+quietly crossfades through the metadata-stripped images in
+`public/portrait-reel/`, keeping each source aspect ratio. Most project visuals
+were restored from this repository's Git history, with the DetectT demo copied
+from its public repository. Outfit, Figtree, and JetBrains Mono are loaded
+through `next/font/google` with `swap` display and system fallbacks.
 
 ## Deployment
 

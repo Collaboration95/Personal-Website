@@ -71,6 +71,15 @@ not bring them back unless the direction is intentionally revisited.
 
 ## Interaction requirements
 
+### Hero portrait reel
+
+The hero begins with the existing portrait, then moves through the approved
+personal photo set using a quiet crossfade rather than a novelty pixel or tile
+effect. Each frame holds for about 6.5 seconds and dissolves over about 1.1
+seconds. The frame follows the active image's natural aspect ratio so landscape
+and portrait images are not forced into one crop. Rotation pauses for reduced-
+motion users and while the page is hidden.
+
 ### Edge dial / scroll navigator
 
 Add a small, fixed dial-like navigator at the edge of the viewport. The visual
@@ -135,13 +144,13 @@ This file records the design decisions only. The Warm Paper direction is now
 implemented in `app/globals.css` through semantic variables (`--paper`,
 `--ink`, `--copper`, `--lilac`, `--teal`, `--peach`, and `--plum`). Outfit,
 Figtree, and JetBrains Mono are loaded in `app/layout.tsx`; components consume
-the variables rather than repeating raw colour literals. The edge dial is the
-only required client interaction and degrades to ordinary anchor links when
-JavaScript is unavailable.
+the variables rather than repeating raw colour literals. The edge dial and
+hero portrait reel are the required client interactions; both retain useful
+static content when JavaScript is unavailable.
 
-The available repository assets do not include a verified Instagram photo set,
-so the timeline uses the restored portrait for one learning-related personal
-moment and never fabricates a social feed. Flagship case studies mix stable
-same-origin project diagrams with HTML/CSS evidence figures so a missing photo
-does not turn into a fabricated claim. Add future personal photography through
-the documented asset/content inventory before publishing it.
+The hero uses a verified, user-supplied personal photo set as a quiet rotating
+reel, while the timeline uses the restored portrait for one personal moment and
+never fabricates a social feed. Flagship case studies mix stable same-origin
+project diagrams with HTML/CSS evidence figures so a missing photo does not
+turn into a fabricated claim. Add future personal photography through the
+documented asset/content inventory before publishing it.

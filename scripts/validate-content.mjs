@@ -3,6 +3,19 @@ import fs from "node:fs";
 
 const requiredFiles = [
   "public/intro-alone.jpeg",
+  "public/portrait-reel/IMG_2924.jpg",
+  "public/portrait-reel/IMG_2978.jpg",
+  "public/portrait-reel/IMG_3498.jpg",
+  "public/portrait-reel/IMG_4358.jpg",
+  "public/portrait-reel/IMG_4544.jpg",
+  "public/portrait-reel/IMG_4777.jpg",
+  "public/portrait-reel/IMG_5601.jpg",
+  "public/portrait-reel/IMG_5716.jpg",
+  "public/portrait-reel/IMG_5737.jpg",
+  "public/portrait-reel/IMG_5880.jpg",
+  "public/portrait-reel/IMG_5898.jpg",
+  "public/portrait-reel/IMG_6950.jpg",
+  "public/portrait-reel/IMG_7021.jpg",
   "public/detectt-posenet-setup.png",
   "public/HealthMate.png",
   "public/InvoiceHub.png",
@@ -34,6 +47,7 @@ const requiredLabels = [
   "https://www.linkedin.com/in/guruprasath3200/",
   "https://github.com/Collaboration95",
   "https://github.com/Collaboration95/DetectT",
+  "portrait-reel/IMG_2924.jpg",
 ];
 
 for (const label of requiredLabels) {

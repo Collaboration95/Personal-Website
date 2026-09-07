@@ -8,12 +8,30 @@ import healthMateImage from "@/public/HealthMate.png";
 import invoiceHubImage from "@/public/InvoiceHub.png";
 import mandateFlowProvenanceImage from "@/public/mandateflow-provenance.jpg";
 import portraitImage from "@/public/intro-alone.jpeg";
+import portrait2924Image from "@/public/portrait-reel/IMG_2924.jpg";
+import portrait2978Image from "@/public/portrait-reel/IMG_2978.jpg";
+import portrait3498Image from "@/public/portrait-reel/IMG_3498.jpg";
+import portrait4358Image from "@/public/portrait-reel/IMG_4358.jpg";
+import portrait4544Image from "@/public/portrait-reel/IMG_4544.jpg";
+import portrait4777Image from "@/public/portrait-reel/IMG_4777.jpg";
+import portrait5601Image from "@/public/portrait-reel/IMG_5601.jpg";
+import portrait5716Image from "@/public/portrait-reel/IMG_5716.jpg";
+import portrait5737Image from "@/public/portrait-reel/IMG_5737.jpg";
+import portrait5880Image from "@/public/portrait-reel/IMG_5880.jpg";
+import portrait5898Image from "@/public/portrait-reel/IMG_5898.jpg";
+import portrait6950Image from "@/public/portrait-reel/IMG_6950.jpg";
+import portrait7021Image from "@/public/portrait-reel/IMG_7021.jpg";
 import screenshotDecluttererImage from "@/public/screenshot-declutterer-before-after.png";
 
 export type SocialLink = {
   label: string;
   href: string;
   shortLabel: string;
+};
+
+export type PortraitReelImage = {
+  image: StaticImageData;
+  alt: string;
 };
 
 export type Project = {
@@ -107,6 +125,64 @@ export const siteContent = {
     image: portraitImage,
     imageAlt:
       "Portrait of Guru Prasath in a light blue shirt, looking toward the camera.",
+    images: [
+      {
+        image: portraitImage,
+        alt: "Portrait of Guru Prasath in a light blue shirt, looking toward the camera.",
+      },
+      {
+        image: portrait5737Image,
+        alt: "Portrait of Guru Prasath in a white shirt outdoors among greenery.",
+      },
+      {
+        image: portrait4358Image,
+        alt: "Guru Prasath wearing headphones at a desk with colleagues in the background.",
+      },
+      {
+        image: portrait5716Image,
+        alt: "Guru Prasath standing with four colleagues outside a building.",
+      },
+      {
+        image: portrait4777Image,
+        alt: "Guru Prasath and a colleague beside a whiteboard covered in planning notes.",
+      },
+      {
+        image: portrait2924Image,
+        alt: "Guru Prasath taking a group selfie with friends on a colorful street.",
+      },
+      {
+        image: portrait5880Image,
+        alt: "Guru Prasath kayaking on a Singapore waterway with the city behind him.",
+      },
+      {
+        image: portrait5898Image,
+        alt: "Guru Prasath kayaking with another paddler on a Singapore waterway.",
+      },
+      {
+        image: portrait6950Image,
+        alt: "Guru Prasath kayaking with another paddler and an orange kayak behind him.",
+      },
+      {
+        image: portrait5601Image,
+        alt: "Guru Prasath taking a mirror selfie in an elevator.",
+      },
+      {
+        image: portrait7021Image,
+        alt: "Guru Prasath taking a mirror selfie at home with family in the background.",
+      },
+      {
+        image: portrait2978Image,
+        alt: "Guru Prasath and a friend sharing ice cream at an indoor market.",
+      },
+      {
+        image: portrait3498Image,
+        alt: "Guru Prasath sitting with a friend on a train.",
+      },
+      {
+        image: portrait4544Image,
+        alt: "Guru Prasath standing with an older colleague in formal clothes.",
+      },
+    ] satisfies readonly PortraitReelImage[],
   },
   principles: [
     {

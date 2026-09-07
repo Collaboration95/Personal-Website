@@ -3,6 +3,7 @@
 | Asset | Source | Treatment | Status |
 | --- | --- | --- | --- |
 | `public/intro-alone.jpeg` | Historical repository commit `cae50a4` | Editorial portrait crop with explicit dimensions and descriptive alt text | Restored |
+| `public/portrait-reel/*.jpg` | User-supplied `/Desktop/personal-website-images/` set | Optimized, auto-oriented, metadata-stripped hero reel; the current portrait remains the first frame and later frames keep their source aspect ratios | Added |
 | `public/detectt-posenet-setup.png` | Public `Collaboration95/DetectT` repository | DetectT pose-detection prototype demo for the archive card | Added |
 | `public/HealthMate.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |
 | `public/InvoiceHub.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |
@@ -17,10 +18,11 @@
 ## Rights and privacy
 
 Restored visuals come from this repository's own history, with the DetectT demo
-copied from the user's public `Collaboration95/DetectT` repository. No
-Instagram media, stock imagery, or remote image URL is used at runtime. The
-portrait's non-visual camera metadata was stripped before publication; Next's
-optimized image response is used for rendered views.
+copied from the user's public `Collaboration95/DetectT` repository. The hero
+reel uses the user-supplied personal photo set; its non-visual camera metadata
+was stripped before publication. No Instagram media, stock imagery, or remote
+image URL is used at runtime, and Next's optimized image response is used for
+rendered views.
 
 ## Missing asset note
 

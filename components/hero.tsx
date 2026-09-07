@@ -1,23 +1,13 @@
-import Image from "next/image";
-
 import { siteContent } from "@/lib/data";
+
+import PortraitReel from "@/components/portrait-reel";
 
 export default function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title" tabIndex={-1}>
       <div className="hero__grid">
         <div className="hero__media">
-          <figure className="portrait-frame">
-            <Image
-              src={siteContent.hero.image}
-              alt={siteContent.hero.imageAlt}
-              width={siteContent.hero.image.width}
-              height={siteContent.hero.image.height}
-              priority
-              sizes="(max-width: 720px) 72vw, (max-width: 1100px) 30vw, 22rem"
-            />
-            <figcaption className="portrait-frame__caption">Singapore / 2024</figcaption>
-          </figure>
+          <PortraitReel images={siteContent.hero.images} />
         </div>
 
         <div className="hero__copy">
