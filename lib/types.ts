@@ -1,6 +1,1 @@
-import { links } from "./data";
-
-export type SectionName = (typeof links)[number]["name"];
-
-
-export type Theme = "light" | "dark";
+export type { Experience, PhotoMoment, Project, TimelineChapter } from "./data";

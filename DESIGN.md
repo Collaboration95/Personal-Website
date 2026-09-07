@@ -1,3 +1,44 @@
+---
+version: alpha
+name: "Guru Prasath Portfolio"
+description: "A warm-paper personal portfolio for a software engineer who builds useful systems and notices the details around them."
+colors:
+  primary: "#B9684D"
+  paper: "#F4EEE5"
+  paper-deep: "#EBE2D7"
+  surface: "#FAF6EF"
+  ink: "#201D1A"
+  muted: "#706A64"
+  copper: "#B9684D"
+  lilac: "#A995B9"
+  teal: "#587C79"
+  peach: "#D79B86"
+  plum: "#765C72"
+omitted:
+  - section: rounded
+    reason: "Square editorial frames and a component-specific circular portrait crop replace a shared radius scale."
+typography:
+  display:
+    fontFamily: "Outfit, Arial Narrow, sans-serif"
+  body:
+    fontFamily: "Figtree, Helvetica Neue, sans-serif"
+  mono:
+    fontFamily: "JetBrains Mono, SFMono-Regular, Consolas, monospace"
+spacing:
+  content-width: "90rem"
+  gutter-min: "1.25rem"
+components:
+  primary-action:
+    backgroundColor: "#201D1A"
+    textColor: "#F4EEE5"
+  project-panel:
+    backgroundColor: "#FAF6EF"
+    textColor: "#201D1A"
+  edge-dial:
+    backgroundColor: "#EBE2D7"
+    textColor: "#201D1A"
+---
+
 # Guru Prasath — Design Direction
 
 **Decision date:** 2026-08-22  
@@ -29,6 +70,15 @@ not bring them back unless the direction is intentionally revisited.
   with captions and a visible central line/rail.
 
 ## Interaction requirements
+
+### Hero portrait reel
+
+The hero begins with the existing portrait, then moves through the approved
+personal photo set using a quiet crossfade rather than a novelty pixel or tile
+effect. Each frame holds for about 5 seconds and dissolves over about 0.9
+seconds. The frame follows the active image's natural aspect ratio so landscape
+and portrait images are not forced into one crop. Rotation pauses for reduced-
+motion users and while the page is hidden.
 
 ### Edge dial / scroll navigator
 
@@ -90,6 +140,17 @@ text on dark surfaces.
 
 ## Implementation boundary
 
-This file records the design decisions only. The codebase has not been
-re-themed yet; the next implementation pass should apply Warm Paper first and
-keep the same content structure and interaction model.
+This file records the design decisions only. The Warm Paper direction is now
+implemented in `app/globals.css` through semantic variables (`--paper`,
+`--ink`, `--copper`, `--lilac`, `--teal`, `--peach`, and `--plum`). Outfit,
+Figtree, and JetBrains Mono are loaded in `app/layout.tsx`; components consume
+the variables rather than repeating raw colour literals. The edge dial and
+hero portrait reel are the required client interactions; both retain useful
+static content when JavaScript is unavailable.
+
+The hero uses a verified, user-supplied personal photo set as a quiet rotating
+reel, while the timeline uses the restored portrait for one personal moment and
+never fabricates a social feed. Flagship case studies mix stable same-origin
+project diagrams with HTML/CSS evidence figures so a missing photo does not
+turn into a fabricated claim. Add future personal photography through the
+documented asset/content inventory before publishing it.
