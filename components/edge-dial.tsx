@@ -33,7 +33,20 @@ export default function EdgeDial() {
 
     const onHashChange = () => {
       const hash = window.location.hash.slice(1);
-      if (hash && targets.some((target) => target.id === hash)) setActiveId(hash);
+      const target = targets.find((candidate) => candidate.id === hash);
+      if (!target) return;
+
+      setActiveId(hash);
+      const navigationEntry = window.performance.getEntriesByType("navigation")[0] as
+        | PerformanceNavigationTiming
+        | undefined;
+      if (navigationEntry?.type !== "reload") {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        target.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "start",
+        });
+      }
     };
 
     window.addEventListener("hashchange", onHashChange);

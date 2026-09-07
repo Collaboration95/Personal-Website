@@ -11,7 +11,7 @@ The portfolio is a static document with a small amount of progressive enhancemen
 ## Implementation shape
 
 - `lib/data.ts` owns the typed personal, project, work-history, photo, and chapter content.
-- `components/hero.tsx`, `components/timeline.tsx`, and `components/site-footer.tsx` render semantic document sections.
+- `components/hero.tsx`, `components/principles.tsx`, `components/timeline.tsx`, `components/case-study-visual.tsx`, and `components/site-footer.tsx` render semantic document sections.
 - `components/edge-dial.tsx` owns the accessible progressive-enhancement navigator.
 - `app/globals.css` owns the Warm Paper token mapping and responsive layout system.
 - Next static image imports provide explicit dimensions and responsive optimization.

@@ -25,7 +25,7 @@ typography:
   mono:
     fontFamily: "JetBrains Mono, SFMono-Regular, Consolas, monospace"
 spacing:
-  content-width: "74rem"
+  content-width: "90rem"
   gutter-min: "1.25rem"
 components:
   primary-action:
@@ -35,7 +35,7 @@ components:
     backgroundColor: "#FAF6EF"
     textColor: "#201D1A"
   edge-dial:
-    backgroundColor: "#B9684D"
+    backgroundColor: "#EBE2D7"
     textColor: "#201D1A"
 ---
 
@@ -140,6 +140,8 @@ only required client interaction and degrades to ordinary anchor links when
 JavaScript is unavailable.
 
 The available repository assets do not include a verified Instagram photo set,
-so the timeline currently uses the restored portrait for one editorial pause
-and never fabricates a social feed. Add future personal photography through
+so the timeline uses the restored portrait for one learning-related personal
+moment and never fabricates a social feed. Flagship case studies mix stable
+same-origin project diagrams with HTML/CSS evidence figures so a missing photo
+does not turn into a fabricated claim. Add future personal photography through
 the documented asset/content inventory before publishing it.

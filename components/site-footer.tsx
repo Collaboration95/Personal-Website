@@ -26,7 +26,13 @@ export default function SiteFooter() {
               {social.label}
             </a>
           ))}
-          <a href="/FinalResume.pdf">Résumé</a>
+          <a
+            href={siteContent.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {siteContent.resumeLabel}
+          </a>
         </nav>
         <p>© {new Date().getFullYear()} — built with care</p>
       </div>

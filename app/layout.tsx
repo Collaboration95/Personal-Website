@@ -25,7 +25,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteContent.siteUrl),
   title: {
-    default: "Guru Prasath — Software engineer / systems builder",
+    default: "Guru Prasath — Software engineer / systems that earn trust",
     template: "%s — Guru Prasath",
   },
   description: siteContent.description,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Guru Prasath — Software engineer / systems builder",
+    title: "Guru Prasath — Software engineer / systems that earn trust",
     description: siteContent.description,
     siteName: "Guru Prasath",
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guru Prasath — Software engineer / systems builder",
+    title: "Guru Prasath — Software engineer / systems that earn trust",
     description: siteContent.description,
     images: ["/intro-alone.jpeg"],
   },

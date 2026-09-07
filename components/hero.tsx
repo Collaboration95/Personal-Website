@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="hero__copy">
           <p className="eyebrow">{siteContent.hero.eyebrow}</p>
           <h1 id="hero-title">
-            I like building the <em>useful</em> parts of software.
+            I build software that makes complex systems easier to <em>trust.</em>
           </h1>
           <p className="hero__lede">{siteContent.hero.paragraph}</p>
 
@@ -41,20 +41,21 @@ export default function Hero() {
             ))}
           </div>
 
-          <p className="hero__utility">
-            <a href="/FinalResume.pdf">Read the résumé</a>
-            <span className="hero__utility-separator" aria-hidden="true">
-              /
-            </span>
-            <span>{siteContent.location}</span>
-          </p>
+          <div className="hero__education" aria-label="Education">
+            {siteContent.hero.education.map((item) => (
+              <p className="hero__education-item" key={item.institution}>
+                <span className="hero__education-institution">{item.institution}</span>
+                <span>{item.qualification}</span>
+              </p>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="hero__footer" aria-hidden="true">
+      <div className="hero__footer">
         <span>Scroll to explore</span>
         <span className="hero__footer-line" />
-        <span>01—08</span>
+        <span>07 chapters</span>
       </div>
     </section>
   );

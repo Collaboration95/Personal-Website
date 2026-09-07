@@ -2,8 +2,8 @@
 
 ## Current phase
 
-Phase 8: release candidate complete locally; Vercel preview built, hosted
-verification blocked by Vercel Authentication.
+Phase 9: narrative case-study pass complete locally; Vercel preview built,
+hosted verification still blocked by Vercel Authentication.
 
 ## Baseline
 
@@ -26,7 +26,7 @@ verification blocked by Vercel Authentication.
 - Retain Next.js App Router and replace the placeholder component tree in place. This is a static one-page site already connected to Vercel, so migration would add risk without improving the product.
 - Use a content model in `lib/data.ts`, semantic HTML, CSS tokens, static image imports, and one small client enhancement for the edge dial and scroll state.
 - Use the Warm Paper palette from `DESIGN.md`; Ember Night remains reference-only and is not implemented as a switcher.
-- Restore only assets already present in this repository's Git history. No stock or third-party social images are added.
+- Use assets already present in this repository's Git history plus explicitly requested public project evidence. No stock or third-party social images are added.
 
 ## Active branch/worktree map
 
@@ -43,13 +43,17 @@ verification blocked by Vercel Authentication.
 - `designmd lint DESIGN.md` passed with zero errors; it reports only informational
   omission data and palette-reference/contrast warnings for the documented token
   mirror.
-- Browser verification passed locally for server-rendered content, chapter
-  navigation, keyboard activation, history back/forward, responsive widths from
-  320px to 1440px, no horizontal overflow, and valid metadata/resources. No
-  critical local runtime errors were observed; the dev session retains
-  non-blocking historical Next image LCP warnings from earlier scroll audits.
-- Computer-view verification passed in Chrome against `http://localhost:3000/`;
-  the hero and HealthMate chapter were opened and visually inspected.
+- Browser verification passed locally for the new case-study content, chapter
+  navigation, keyboard activation, responsive widths from 300px to 985px,
+  no horizontal overflow, and valid metadata/resources. The mobile edge dial
+  stays clear of the timeline card column, and contact/archive anchors settle
+  below the fixed header.
+- Computer-view verification passed against `http://localhost:3000/`; the hero,
+  methods bridge, provenance chapter, archive, contact section, and narrow
+  layout were visually inspected. Next image geometry warnings were removed by
+  reserving aspect-ratio space on media wrappers.
+- Added a checked-in `premium-audit.json` containing the zero-finding strict
+  audit result.
 - Vercel deployment `6038981910` for commit `4db6a43` completed successfully and
   produced the preview URL recorded below.
 

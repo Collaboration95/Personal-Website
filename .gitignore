@@ -29,6 +29,13 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# private working material
+/guru-reference/
+/CONTENT_STRATEGY.md
+/PORTFOLIO_REBUILD_EXECUTION_PROMPT.txt
+/premium-audit.json
+/public/FinalResume.pdf
+
 # vercel
 .vercel
 

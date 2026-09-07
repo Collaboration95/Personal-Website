@@ -60,8 +60,9 @@ photo exports with a source and alt-text note in `ASSET_INVENTORY.md`.
 
 Images are imported through `next/image`, which reserves layout space and emits
 responsive optimized variants. The portrait is the only verified personal
-photo currently available; project visuals were restored from this repository's
-Git history. Outfit, Figtree, and JetBrains Mono are loaded through
+photo currently available; most project visuals were restored from this
+repository's Git history, with the DetectT demo copied from its public
+repository. Outfit, Figtree, and JetBrains Mono are loaded through
 `next/font/google` with `swap` display and system fallbacks.
 
 ## Deployment
