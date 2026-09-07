@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 import type { PortraitReelImage } from "@/lib/data";
 
-const HOLD_MS = 6500;
-const FADE_MS = 1100;
+const HOLD_MS = 5000;
+const FADE_MS = 900;
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
 type PortraitReelProps = {

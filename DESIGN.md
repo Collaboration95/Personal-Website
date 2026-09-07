@@ -75,7 +75,7 @@ not bring them back unless the direction is intentionally revisited.
 
 The hero begins with the existing portrait, then moves through the approved
 personal photo set using a quiet crossfade rather than a novelty pixel or tile
-effect. Each frame holds for about 6.5 seconds and dissolves over about 1.1
+effect. Each frame holds for about 5 seconds and dissolves over about 0.9
 seconds. The frame follows the active image's natural aspect ratio so landscape
 and portrait images are not forced into one crop. Rotation pauses for reduced-
 motion users and while the page is hidden.
