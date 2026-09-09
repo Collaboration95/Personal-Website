@@ -20,7 +20,9 @@ export default function ThemeToggleComponent() {
           align-items: center;
           justify-content: center;
           min-height: 100vh;
-          transition: background-color 0.3s, color 0.3s;
+          transition:
+            background-color 0.3s,
+            color 0.3s;
         }
 
         .theme-container.light {

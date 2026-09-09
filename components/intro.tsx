@@ -6,15 +6,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import image from "@/public/corpcomment.png";
+import image from "@/public/intro-alone.jpeg";
 import { FaGithubSquare } from "react-icons/fa";
-
+import clsx from "clsx";
 import { useSectionInView } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 export default function Intro() {
   const { ref } = useSectionInView({ sectionName: "Home" });
-
+  const { theme } = useTheme();
   return (
+    
     <section
       ref={ref}
       id="home"
@@ -32,7 +34,7 @@ export default function Intro() {
           >
             <Image
               src={image}
-              alt="Ricardo portrait"
+              alt="Guru Potrait"
               width="192"
               height="192"
               quality="95"
@@ -62,11 +64,11 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Guru</span> I&apos;m a{" "}
-        <span className="font-bold">Lorem Ipsum Dolor Sit Amet</span> with{" "}
-        <span className="font-bold">1 year</span> of experience. I enjoy eating{" "}
-        <span className="italic">pizzas</span>. My focus is{" "}
-        <span className="underline">on Fullstack</span>.
+        <span className="font-bold">Hi, I&apos;m Guru</span>
+        <br />
+        <span className="font-bold"> A final year CS Student @ SUTD</span>
+        <br />
+        <span className="font-bold">Welcome to my website !</span>
       </motion.h1>
 
       <motion.div
@@ -78,12 +80,9 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#contact"
+          href="https://www.linkedin.com/in/guruprasath3200/"
+          target="_blank"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            // setActiveSection("Contact");
-            // setTimeOfLastClick(Date.now());
-          }}
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
@@ -91,7 +90,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/FinalResume.pdf"
+          href="/GuruprasathGopal_Resume.pdf"
           download
         >
           Download CV{" "}
@@ -99,7 +98,13 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          className={clsx(" p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60",
+            {
+              "!text-blue-700": theme==="light",
+              "!text-white": theme==="dark"
+            }
+          )}
+        
           href="https://www.linkedin.com/in/guruprasath3200/"
           target="_blank"
         >
@@ -107,7 +112,13 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+                  className={clsx(" p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60",
+                    {
+                      "!text-black": theme==="light",
+                      "!text-white": theme==="dark"
+                    }
+                  )}
+
           href="https://github.com/Collaboration95"
           target="_blank"
         >
