@@ -13,7 +13,10 @@ Pip, an original pocket-otter companion, changes material with each era. The
 fixed dial tracks the page and becomes a compact edge control with reserved space on phones.
 Images, text, and ordinary navigation remain available without JavaScript.
 Motion respects reduced-motion preferences; the photo stack has explicit
-controls and never advances automatically.
+controls and rotates through the supplied camera roll every 4.5 seconds. It pauses
+on hover, keyboard focus, when off-screen, and when the tab is hidden; reduced
+motion starts with manual browsing. Every Pip supports wave, snack, nap, and wake
+interactions through generated sprite poses and keyboard-accessible controls.
 
 ## Development
 
@@ -39,7 +42,8 @@ dependency was added for the era design, widgets, journal, or companions.
 | `lib/journal-types.ts` | Shared article/project contracts |
 | `lib/publication.ts` | Cover selection, reading times, dates, XML escaping |
 
-The initial edition contains 27 selected projects and eight articles. Project
+The initial edition contains 27 selected projects and nine articles, including a dedicated
+ResearchAgent main-stage presentation account. Project
 images are actual public screenshots or retained early portfolio assets.
 Team projects and authored forks retain their context. Do not invent links for
 older projects whose public repository has not been established.
@@ -71,7 +75,9 @@ changes; build success alone does not establish visual correctness.
 - [Era plan](docs/design/era-refresh-plan.md): planning separated from implementation.
 - [Content inventory](CONTENT_INVENTORY.md): publication evidence and limits.
 - [Project image sources](docs/design/project-image-sources.md): public originals and credits.
-- [Companion assets](docs/design/companion-assets.md): exact generation prompts and validation.
+- [Companion assets](docs/design/companion-assets.md): original artwork prompts.
+- [Interactive sprites](docs/design/interactive-companion-assets.md): all sixteen generated poses, frame contract, prompts, and validation.
+- [Presentation sources](docs/design/researchagent-presentation-sources.md): verified event context and photo credits.
 - [Rebuild status](REBUILD_STATUS.md): verification and review/deployment state.
 
 The existing Next App Router/Vercel architecture is retained. A supported-version

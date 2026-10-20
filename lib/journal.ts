@@ -70,6 +70,98 @@ export const articles: readonly JournalArticle[] = [
     ],
   },
   {
+    slug: "researchagent-main-stage",
+    title: "Taking ResearchAgent to the main stage",
+    description:
+      "Presenting our research agent with a wallet at AI Tinkerers Singapore, and bringing home a top-three Cloud Run demo distinction.",
+    kind: "talk",
+    era: "lab",
+    publishedAt: "2026-10-20",
+    eventLabel: "10 October 2026 · AI Tinkerers Singapore",
+    status: "published",
+    projectIds: ["researchagent"],
+    cover: {
+      src: "/project-images/researchagent-main-stage.webp",
+      alt: "ResearchAgent’s answer and spending budget projected beside a presenter at the Singtel podium.",
+      caption:
+        "Presenting ResearchAgent at AI Tinkerers Singapore, 10 October 2026. Photo: event attendee, via the organizer’s event gallery.",
+      width: 1600,
+      height: 900,
+    },
+    blocks: [
+      {
+        type: "paragraph",
+        text: "On 10 October 2026, I took ResearchAgent to the main stage at AI Tinkerers Singapore. I presented a live demo at Singtel 8George: a research agent with a wallet, an evidence gap to fill, and a fixed budget. The project began with our SingHacks team, Nguyễn Trần Thành Minh, Jiamin Wang, Andrew Nguyen, and me. We had reached the finals there in September. This was the next step: bringing the evolving project in front of a room of builders.",
+      },
+      { type: "heading", text: "Give the purchase a reason" },
+      {
+        type: "paragraph",
+        text: "The walkthrough starts with free sources. The agent builds an answer, identifies what it still cannot support, and considers whether a paid article could improve it. The question is how much useful evidence that article adds. Another version of something already known should not earn a purchase just because its title looks relevant.",
+      },
+      {
+        type: "paragraph",
+        text: "On the projected screen, you can follow the question, the available budget, the chosen source, and the answer after the purchase. Those details make the decision inspectable. The model can propose a source, while budget limits and payment checks constrain the action. Delivery verification then checks what arrived before the result becomes part of the answer.",
+      },
+      {
+        type: "image",
+        src: "/project-images/researchagent-stage-architecture.webp",
+        alt: "A presenter explaining the projected ResearchAgent diagram, with separate reader, writer, and testnet ledger layers.",
+        caption:
+          "Walking through the reader, writer, and payment layers. Photo: event attendee, via AI Tinkerers Singapore’s 10 October gallery.",
+        width: 1600,
+        height: 900,
+      },
+      {
+        type: "paragraph",
+        text: "The demo uses fictional writers and articles, with XRPL Testnet settlement. No real money moves. That boundary matters when watching the presentation: the prototype lets us examine spending controls, delivery proofs, and recovery from failed purchases in a contained setting. A verified delivery still does not establish that an article’s claims are true. It establishes what was delivered against the promised evidence.",
+      },
+      { type: "heading", text: "A Cloud Run demo worth taking home" },
+      {
+        type: "paragraph",
+        text: "The live demo ran on Google Cloud Run and placed among the top three Cloud Run demos at the meetup, earning US$100 in Google Cloud credits. I shared that result in my post after the event. It was a separate milestone from the SingHacks finalist result, and presenting the work itself was a meaningful part of it.",
+      },
+      {
+        type: "paragraph",
+        text: "I also turned the build into a retrospective: 39 days, 248 commits, 75 pull requests, and 422 prompts to two coding agents. The charts are a record of how this project was made. My favourite slice was one night with 23 pull requests between 1 am and 3:19 am. The writeup, slides, and retained walkthrough let someone explore both the engineering and the path to the presentation.",
+      },
+      {
+        type: "callout",
+        label: "Revisit the presentation",
+        text: "The original Cloud Run deployment was retired after the talk. The slide deck, interactive walkthrough, and build retrospective remain available through the links below.",
+      },
+    ],
+    sources: [
+      {
+        label: "AI Tinkerers Singapore · official 10 October event",
+        href: "https://singapore.aitinkerers.org/p/ai-tinkerers-singapore-saturday-demo-meetup-with-joe-heitzeberg-oct-10",
+      },
+      {
+        label: "Organizer’s ResearchAgent presentation announcement",
+        href: "https://www.linkedin.com/posts/ai-tinkerers-singapore_aitinkerers-singapore-agenticai-activity-7511591073815724032-gH7o",
+      },
+      {
+        label: "Presentation slides · team and architecture",
+        href: "https://collaboration95.github.io/theFastandtheFungible/slides/",
+      },
+      {
+        label: "Retained interactive walkthrough",
+        href: "https://collaboration95.github.io/theFastandtheFungible/talk/",
+      },
+      {
+        label: "The build retrospective",
+        href: "https://collaboration95.github.io/theFastandtheFungible/evolution/",
+      },
+      {
+        label: "Event photographs · AI Tinkerers Singapore gallery",
+        href: "https://singapore.aitinkerers.org/meetup/mu_oOS3ivaBeO4/gallery?page=2",
+      },
+      {
+        label: "ResearchAgent · source, demo distinction, and prototype scope",
+        href: "https://github.com/Collaboration95/theFastandtheFungible",
+      },
+    ],
+  },
+  {
     slug: "researchagent-evidence",
     title: "ResearchAgent: buying evidence means checking the delivery",
     description:
@@ -77,13 +169,13 @@ export const articles: readonly JournalArticle[] = [
     kind: "hackathon",
     era: "lab",
     publishedAt: "2026-10-20",
-    eventLabel: "4–5 September 2026 · SingHacks; 10 October 2026 · stage demo",
+    eventLabel: "September–October 2026 · SingHacks and AI Tinkerers Singapore",
     status: "published",
     projectIds: ["researchagent"],
     blocks: [
       {
         type: "paragraph",
-        text: "I worked with a team on ResearchAgent for SingHacks, where we became finalists. The question behind it was more specific than whether an agent could search the web: when should it pay for another piece of evidence, and what should happen if that evidence fails the promise behind the purchase? We later demonstrated the project on stage on 10 October.",
+        text: "I worked with a team on ResearchAgent for SingHacks, where we became finalists. The question behind it was more specific than whether an agent could search the web: when should it pay for another piece of evidence, and what should happen if that evidence fails the promise behind the purchase? I later presented it on the main stage at AI Tinkerers Singapore on 10 October. The live demo placed among the top three Cloud Run demos at that meetup.",
       },
       {
         type: "paragraph",

@@ -4,9 +4,7 @@ import PortraitReel from "@/components/portrait-reel";
 export default function Hero() {
   const photos = [
     siteContent.hero.images[1],
-    siteContent.hero.images[6],
-    siteContent.hero.images[4],
-    siteContent.hero.images[11],
+    ...siteContent.hero.images.filter((_, index) => index !== 1),
   ];
   return (
     <section
