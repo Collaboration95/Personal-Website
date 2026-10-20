@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Four chapters, four worlds</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: transparent; }
+    body { color: var(--foreground, #242721); font: 15px/1.5 var(--font-sans, Arial, sans-serif); }
+    .worlds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .world { position: relative; padding: 24px; border-radius: var(--radius, 16px); overflow: hidden; min-height: 252px; }
+    .lab { background: #26262c; color: #f3effa; }
+    .studio { background: #f1d6c7; color: #392f2a; }
+    .field { background: #173c3a; color: #e0efdf; background-image: linear-gradient(#b3d4c60c 1px, transparent 1px), linear-gradient(90deg, #b3d4c60c 1px, transparent 1px); background-size: 20px 20px; }
+    .play { background: #d9e1ca; color: #303a29; }
+    .eyebrow { display: block; font: 11px/1.5 var(--font-mono, monospace); letter-spacing: .06em; text-transform: uppercase; }
+    h2 { font-size: clamp(24px, 5vw, 35px); font-weight: 500; line-height: 1.05; letter-spacing: -.04em; margin: 10px 0 8px; }
+    .studio h2 { font-family: Georgia, serif; font-style: italic; }
+    .field h2, .play h2 { font-family: var(--font-mono, monospace); font-size: 27px; letter-spacing: -.055em; }
+    .world p { max-width: 155px; font-size: 13px; margin: 0; }
+    .world img { position: absolute; width: 158px; height: 158px; object-fit: contain; right: 0; bottom: 6px; }
+    .material { position: absolute; left: 24px; bottom: 22px; font: 10px/1.5 var(--font-mono, monospace); max-width: 100px; }
+    .strip { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 20px; }
+    figure { margin: 0; }
+    .shot { height: 125px; overflow: hidden; background: var(--muted, #e9e6df); border-radius: var(--radius, 12px); }
+    .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    figcaption { margin-top: 7px; font-size: 12px; line-height: 1.4; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 20px 0 0; font: 12px/1.5 var(--font-mono, monospace); color: var(--muted-foreground, #60645b); }
+    .meta strong { font-weight: 600; color: var(--foreground, #242721); }
+    @media (max-width: 480px) {
+      .world { padding: 18px; min-height: 340px; }
+      h2, .field h2, .play h2 { font-size: 24px; }
+      .eyebrow { font-size: 10px; }
+      .world p { font-size: 12px; }
+      .world img { width: 122px; height: 122px; right: 4px; bottom: 16px; }
+      .material { left: 18px; bottom: 10px; font-size: 9px; max-width: none; }
+      .shot { height: 82px; }
+      .strip { gap: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="The four era companions and selected project imagery">
+    <div class="worlds">
+      <section class="world lab">
+        <span class="eyebrow">01 / 2026</span><h2>The lab</h2>
+        <p>Local tools, agent experiments, and questions worth measuring.</p>
+        <span class="material">Pip / lilac resin</span>
+        <img src="../../public/companions/pip-lab.webp" alt="Pip, a translucent lilac otter holding a small copper keepsake.">
+      </section>
+      <section class="world studio">
+        <span class="eyebrow">02 / 2024–25</span><h2>The studio</h2>
+        <p>Camera feedback, product decisions, and a better fit.</p>
+        <span class="material">Pip / peach ceramic</span>
+        <img src="../../public/companions/pip-studio.webp" alt="Pip in glossy peach ceramic, holding a small copper keepsake.">
+      </section>
+      <section class="world field">
+        <span class="eyebrow">03 / 2023–24</span><h2>In the field</h2>
+        <p>R&amp;D, connected systems, and code with a history.</p>
+        <span class="material">Pip / teal enamel</span>
+        <img src="../../public/companions/pip-field.webp" alt="Pip in teal enamel, holding a small copper keepsake.">
+      </section>
+      <section class="world play">
+        <span class="eyebrow">04 / earlier saves</span><h2>The playground</h2>
+        <p>Games, bots, and the habit of making something to find out.</p>
+        <span class="material">Pip / sage cartridge</span>
+        <img src="../../public/companions/pip-play.webp" alt="Pip as a sage-green retro game companion.">
+      </section>
+    </div>
+    <div class="strip" aria-label="Real project images">
+      <figure><div class="shot"><img src="../../public/project-images/commons.webp" alt="The Commons cartoon room filled with visitors and creatures."></div><figcaption>The Commons</figcaption></figure>
+      <figure><div class="shot"><img src="../../public/project-images/screenshot-declutterer.webp" alt="Screenshot Declutterer's local review board."></div><figcaption>Screenshot Declutterer</figcaption></figure>
+      <figure><div class="shot"><img src="../../public/project-images/fitback.webp" alt="Fitback's public camera and pose-guidance prototype."></div><figcaption>Fitback / DetectT</figcaption></figure>
+    </div>
+    <p class="meta"><span><strong>4</strong> era worlds</span><span><strong>8</strong> journal stories</span><span><strong>27</strong> projects</span><span><strong>4</strong> original companions</span></p>
+  </main>
+</body>
+</html>

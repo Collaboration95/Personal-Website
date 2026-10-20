@@ -1,35 +1,38 @@
-# Content inventory
+# Content inventory — 20 October 2026
 
-| Content | Verified source | Destination | Status |
-| --- | --- | --- | --- |
-| Guru Prasath / software engineer | Existing production DOM and resume | Hero | Verified |
-| Software focus: web, IoT, cloud applications | Existing production DOM and resume | Hero / about note | Verified |
-| Singapore University of Technology and Design degree | Local résumé source and historical `lib/data.ts` | Work archive | Verified |
-| Teaching Assistant, Intro to Python Programming | Local résumé source and historical `lib/data.ts` | Work archive | Verified |
-| Primech A&P R&D internships | Local résumé source and historical `lib/data.ts` | Work archive | Verified |
-| HealthMate | Resume, historical `lib/data.ts`, `public/HealthMate.png` | Timeline project | Verified |
-| InvoiceHub | Resume, historical `lib/data.ts`, `public/InvoiceHub.png` | Timeline project | Verified |
-| 3D Angry Bird Space | Resume, historical `lib/data.ts`, `public/angrybirdsspace.png` | Timeline project | Verified |
-| Atari Breakout | Resume, historical `lib/data.ts`, `public/Breakout_C.png` | Timeline project | Verified |
-| Aircon Balance Bot | Resume, historical `lib/data.ts`, `public/AirconBot.png` | Timeline project | Verified |
-| DetectT | Public `Collaboration95/DetectT` README and `public/detectt-posenet-setup.png` | Work archive | Verified; README link included |
-| LinkedIn | Existing production DOM: `https://www.linkedin.com/in/guruprasath3200/` | Hero / closing | Verified |
-| GitHub | Existing production DOM: `https://github.com/Collaboration95` | Hero / closing | Verified |
-| Email | Existing public contact details and local résumé source | Closing contact | Verified |
-| Resume PDF | Local working copy only | Source for editorial verification; current résumé CTA points to LinkedIn | Not checked in or linked |
-| Personal portrait | Historical `public/intro-alone.jpeg` | Hero / one editorial note | Verified, repository-owned |
-| MandateFlow provenance case study | `guru-reference/README.md`, local MandateFlow docs | Timeline chapter | Public repo and local diagrams available; final contribution/status review remains open |
-| Apple Health importer | `guru-reference/README.md`, local `linkedin/planning/tti-post-1/reference/` notes | Timeline chapter | Benchmark copy is labeled with test conditions |
-| Screenshot Declutterer | `guru-reference/README.md`, local `linkedin/planning/2026-08-15-ss-dcl-3/` notes/assets | Timeline chapter | Local-only claim, platform limitation, and evaluation conditions are stated |
-| Fitback | `guru-reference/README.md` and verified public links | Timeline chapter | Award and exact individual contribution remain explicitly marked for confirmation |
-| Primech | `guru-reference/README.md` and local résumé source | Timeline chapter / archive | Client details intentionally omitted |
+The delivered edition has 27 selected projects and eight substantial articles.
+6.1 Sol researched 54 public repositories, related team work, and the user's
+published LinkedIn archive. Private research files are not part of the site.
+The typed records in `lib/projects.ts` and `lib/journal.ts` are the publication
+source of truth; `lib/data.ts` retains personal information and original photos.
 
-## Content intentionally omitted
+## Article evidence
 
-- Other project repository and live-demo URLs: not present in verified sources, so no unsupported buttons are shown.
-- Instagram profile/media links: not present in verified sources and no export is checked into the repository. The data model supports photo chapters, but the production page does not imply a live social feed.
-- Metrics, testimonials, client names, and outcome claims: not verified, so omitted.
+| Article | Public trail | Publication boundary |
+| --- | --- | --- |
+| The Commons | [Source](https://github.com/Collaboration95/common-grounds-makeathon), [demo](https://www.youtube.com/watch?v=SN3WXWuIOi8) | Solo makeathon build; Best Use of Tech. No People's Choice claim. |
+| ResearchAgent | [Team source](https://github.com/Collaboration95/theFastandtheFungible), [retained walkthrough](https://collaboration95.github.io/theFastandtheFungible/talk/) | SingHacks finalist; fictional corpus/testnet; removed Cloud Run service is not a live link. |
+| MandateFlow | [Canonical team source](https://github.com/tradaokamsa/MandateFlow) | Starter and team credited; Go gateway contribution, fixture-specific policy. |
+| Screenshot naming | [Source](https://github.com/Collaboration95/screenshot-declutterer) | macOS workflow; 39-image/16 GB Mac evaluation is a bounded observation. |
+| Apple Health importer | [Source](https://github.com/Collaboration95/talktoit), [benchmark](https://gist.github.com/Collaboration95/f5f5f7414e04cb5c75e2d2e4274b3bcb) | Apple M1, four workers, stated export. No health values or universal speed claim. |
+| Fitback | [DetectT component](https://github.com/Collaboration95/DetectT), [SUTD award release](https://www.sutd.edu.sg/media-releases-listing/sutd-students-partner-top-firms-including-loreal-db-schenker-changi-airport-group-in-first-inspirecon-showcase/) | Team capstone; first place in Design AI, InspireCon, 14 April 2025. No unverified accuracy or adoption claim. |
+| AWS learning | [Public profile](https://sg.linkedin.com/in/guruprasath3200), [quiz source](https://github.com/Collaboration95/aws-tests-ai) | Five pass announcements supported. Conflicting foundational years and exact pass days omitted; no issuer-verification claim. |
+| YALD | [Source](https://github.com/Collaboration95/yald), [preview release](https://github.com/Collaboration95/yald/releases/tag/v0.1.0) | Read-only local reports; API-price equivalents are not subscription bills. |
 
-## Voice guardrails
+These are new website editions published on 20 October 2026. Event/source
+periods are recorded separately. [Editorial notes](docs/design/journal-editorial-notes.md)
+explain measurement conditions and attribution in more detail.
 
-Copy stays direct and specific: software, systems, small experiments, and the human habits already present in the source material. No placeholder copy, generic agency claims, or invented achievements are introduced.
+## Career and archive
+
+NUS study is described as ongoing; SUTD is a completed undergraduate degree.
+Primech uses the recorded internship ranges without an aggregate-duration claim.
+The earlier Python teaching-assistant role is retained in the playground era.
+Photos are personal interludes, not evidence of an associated employer or event.
+
+The 25 public-source catalogue entries exclude empty repositories, generic forks,
+and exercises; related versions count as one project. Two earlier portfolio
+experiments—3D Angry Bird Space and Aircon Balance Bot—remain as image-backed
+archive entries without fabricated repository URLs. HealthMate and InvoiceHub
+reuse their original portfolio images. The public project catalogue qualifies
+team work, source-run apps, retired demos, and preview releases.

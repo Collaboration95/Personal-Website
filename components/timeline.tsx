@@ -1,211 +1,380 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import Companion from "@/components/companion";
+import PolicyWidget from "@/components/policy-widget";
+import SystemWidget from "@/components/system-widget";
+import { eras, type EraTheme } from "@/lib/eras";
+import { homeFeatures as copy } from "@/lib/home-content";
+import { siteContent } from "@/lib/data";
+import { projects } from "@/lib/projects";
+import { getPublishedArticles } from "@/lib/journal";
 
-import CaseStudyVisual from "@/components/case-study-visual";
-import { chapters, type CaseStudy, type TimelineChapter } from "@/lib/data";
-
-function CaseStudyEntry({ caseStudy, titleId }: { caseStudy: CaseStudy; titleId: string }) {
+function StoryLink({ slug, children }: { slug: string; children?: ReactNode }) {
+  const article = getPublishedArticles().find(
+    (article) => article.slug === slug,
+  );
+  if (!article) return null;
   return (
-    <article className="case-study-card">
-      <div className="case-study-card__heading">
-        <div>
-          <p className="case-study-card__period">{caseStudy.period}</p>
-          <h3 id={titleId}>{caseStudy.title}</h3>
-        </div>
-        <span className="case-study-card__signal" aria-hidden="true">
-          {caseStudy.visual === "benchmark" ? "↗" : caseStudy.visual === "local-ai" ? "◎" : "•"}
-        </span>
-      </div>
-
-      <p className="case-study-card__summary">{caseStudy.summary}</p>
-      <p className="case-study-card__context">{caseStudy.context}</p>
-      <CaseStudyVisual caseStudy={caseStudy} />
-
-      <dl className="case-study-facts">
-        <div>
-          <dt>Constraint</dt>
-          <dd>{caseStudy.constraint}</dd>
-        </div>
-        <div>
-          <dt>My role</dt>
-          <dd>{caseStudy.role}</dd>
-        </div>
-        <div>
-          <dt>Decision</dt>
-          <dd>{caseStudy.decision}</dd>
-        </div>
-        <div className="case-study-facts__evidence">
-          <dt>Evidence</dt>
-          <dd>{caseStudy.evidence}</dd>
-        </div>
-      </dl>
-
-      <div className="case-study-card__bottom">
-        <div>
-          <p className="case-study-card__label">One honest limit</p>
-          <p className="case-study-card__limitation">{caseStudy.limitation}</p>
-        </div>
-        <div className="case-study-card__links">
-          {caseStudy.links.map((link) => (
-            <a href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
-              {link.label} <span aria-hidden="true">↗</span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <ul className="tag-list" aria-label={`${caseStudy.title} technologies`}>
-        {caseStudy.technologies.map((technology) => (
-          <li key={technology}>{technology}</li>
-        ))}
-      </ul>
-    </article>
+    <Link className="text-link" href={`/journal/${slug}`}>
+      {children ?? "Read the story"} <span aria-hidden="true">↗</span>
+    </Link>
   );
 }
-
-function PhotoEntry({ chapter, titleId }: { chapter: TimelineChapter; titleId: string }) {
-  if (!chapter.photo) return null;
-  const photo = chapter.photo;
-
+function ProjectImage({ id, caption }: { id: string; caption?: string }) {
+  const project = projects.find((project) => project.id === id);
+  if (!project?.image) return null;
   return (
-    <figure className="photo-card">
-      <div className="photo-card__image">
-        <Image
-          src={photo.image}
-          alt={photo.imageAlt}
-          width={photo.image.width}
-          height={photo.image.height}
-          loading="lazy"
-          sizes="(max-width: 720px) min(22rem, 82vw), 27rem"
-        />
-      </div>
-      <div className="photo-card__body">
-        <p className="eyebrow">{photo.period}</p>
-        <h3 id={titleId}>{photo.title}</h3>
-        <figcaption>{photo.caption}</figcaption>
-      </div>
+    <figure className="project-image">
+      <Image
+        src={project.image.src}
+        alt={project.image.alt}
+        width={project.image.width}
+        height={project.image.height}
+        sizes="(max-width: 760px) 90vw, 580px"
+      />
+      <figcaption>{caption ?? project.name}</figcaption>
     </figure>
   );
 }
-
-function ArchiveEntry({ chapter, titleId }: { chapter: TimelineChapter; titleId: string }) {
-  if (!chapter.note) return null;
-
+function Era({ theme, children }: { theme: EraTheme; children: ReactNode }) {
+  const era = eras.find((era) => era.theme === theme)!;
   return (
-    <div className="archive-card">
-      <div className="archive-card__intro">
-        <p className="eyebrow">A compact chronology</p>
-        <h3 id={titleId}>{chapter.note.heading}</h3>
-        <p>{chapter.note.body}</p>
-      </div>
-
-      <div className="experience-list-wrap">
-        <p className="case-study-card__label">Work context</p>
-        <ul className="experience-list" aria-label="Work context">
-          {chapter.note.items.map((experience) => (
-            <li key={`${experience.organisation}-${experience.period}`}>
-              <p className="experience-list__period">{experience.period}</p>
-              <div>
-                <p className="experience-list__title">{experience.title}</p>
-                <p className="experience-list__organisation">{experience.organisation}</p>
-                <p className="experience-list__description">{experience.description}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="archive-projects">
-        <div className="archive-projects__heading">
-          <p className="case-study-card__label">Earlier experiments</p>
-          <span>range, kept small</span>
+    <section
+      className={`era era--${theme}`}
+      id={era.id}
+      aria-labelledby={`${era.id}-title`}
+      tabIndex={-1}
+    >
+      <div className="era__inner page-width">
+        <div className="era__rail" aria-hidden="true" />
+        <header className="era__header">
+          <div className="era__title">
+            <p className="era__kicker">
+              <span>{era.number}</span> {era.label}{" "}
+              <span className="era__period">{era.period}</span>
+            </p>
+            <h2 id={`${era.id}-title`}>{era.title}</h2>
+          </div>
+          <div className="era__intro">
+            <p>{era.introduction}</p>
+          </div>
+          <div className="era__pet">
+            <Companion theme={theme} />
+            <span>Pip / {era.companion}</span>
+          </div>
+        </header>
+        {children}
+        <div className="era__end">
+          <span>{era.number} / end of chapter</span>
+          <span aria-hidden="true">↓</span>
         </div>
-        <div className="archive-projects__grid">
-          {chapter.note.archive.map((project) => (
-            <article className="archive-project" key={project.title}>
-              <div className="archive-project__image">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width={project.image.width}
-                  height={project.image.height}
-                  loading="lazy"
-                  sizes="(max-width: 720px) 42vw, 13rem"
-                />
-              </div>
-              <div className="archive-project__body">
-                <p>{project.period}</p>
-                <h4>{project.title}</h4>
-                <span>{project.technologies.join(" / ")}</span>
-                {project.href ? (
-                  <a
-                    className="archive-project__readme"
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read README <span aria-hidden="true">↗</span>
-                  </a>
-                ) : null}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ChapterContent({ chapter, titleId }: { chapter: TimelineChapter; titleId: string }) {
-  if (chapter.kind === "case-study" && chapter.caseStudy) {
-    return <CaseStudyEntry caseStudy={chapter.caseStudy} titleId={titleId} />;
-  }
-  if (chapter.kind === "photo") return <PhotoEntry chapter={chapter} titleId={titleId} />;
-  return <ArchiveEntry chapter={chapter} titleId={titleId} />;
-}
-
-export default function Timeline() {
-  return (
-    <section className="timeline" id="work" aria-labelledby="work-title" tabIndex={-1}>
-      <header className="timeline-intro">
-        <div>
-          <p className="eyebrow">Selected work / field notes</p>
-          <p className="timeline-intro__label">
-            A sequence of systems, constraints, and the decisions that made them easier to inspect.
-          </p>
-        </div>
-        <div>
-          <h2 id="work-title">
-            Things I&apos;ve built, <em>and what they changed.</em>
-          </h2>
-          <p className="timeline-intro__copy">
-            Five chapters from current experiments, a product with outside proof, and work inside existing systems. The common thread is making the next step clearer.
-          </p>
-        </div>
-      </header>
-
-      <div className="timeline__rail">
-        <div className="timeline__line" aria-hidden="true" />
-        {chapters.map((chapter, index) => (
-          <section
-            className="timeline-entry"
-            data-side={index % 2 === 0 ? "left" : "right"}
-            data-kind={chapter.kind}
-            id={chapter.id}
-            key={chapter.id}
-            aria-labelledby={`${chapter.id}-title`}
-            tabIndex={-1}
-          >
-            <span className="timeline-entry__marker" aria-hidden="true" />
-            <div className="timeline-entry__content">
-              <div className="timeline-entry__meta">
-                <span>{chapter.eyebrow}</span>
-                <span className="timeline-entry__purpose">{chapter.purpose}</span>
-              </div>
-              <ChapterContent chapter={chapter} titleId={`${chapter.id}-title`} />
-            </div>
-          </section>
-        ))}
       </div>
     </section>
+  );
+}
+function Note({
+  slug,
+  featured = false,
+}: {
+  slug: string;
+  featured?: boolean;
+}) {
+  const article = getPublishedArticles().find(
+    (article) => article.slug === slug,
+  );
+  if (!article) return null;
+  return (
+    <article
+      className={`note-preview${featured ? " note-preview--large" : ""}`}
+    >
+      <p className="eyebrow">
+        {article.kind} / {article.eventLabel}
+      </p>
+      <h3>
+        <Link href={`/journal/${article.slug}`}>
+          {article.title} <span aria-hidden="true">↗</span>
+        </Link>
+      </h3>
+      <p>{article.description}</p>
+    </article>
+  );
+}
+export default function Timeline() {
+  return (
+    <div id="work" className="era-journey">
+      <Era theme="lab">
+        <article className="era-spread era-spread--lead" id="chapter-commons">
+          <div className="spread__media">
+            <div className="screen-object">
+              <div className="screen-object__bar">
+                <span aria-hidden="true">● ● ●</span>
+                <span>THE COMMONS</span>
+                <span aria-hidden="true">↗</span>
+              </div>
+              <ProjectImage id="commons" caption={copy.commons.caption} />
+            </div>
+            <p className="margin-note">A wish → a creature → a shared world.</p>
+          </div>
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.commons.eyebrow}</p>
+            <h3>{copy.commons.title}</h3>
+            <p>{copy.commons.copy}</p>
+            <StoryLink slug="commons-room" />
+            <div className="award-object">
+              <span aria-hidden="true">✳</span>
+              <p>{copy.commons.recognition}</p>
+            </div>
+          </div>
+        </article>
+        <div
+          className="era-spread era-spread--reverse"
+          id="chapter-local-first"
+        >
+          <article className="spread__copy">
+            <p className="eyebrow">{copy.screenshot.eyebrow}</p>
+            <h3>{copy.screenshot.title}</h3>
+            <p>{copy.screenshot.copy}</p>
+            <StoryLink slug="local-screenshot-naming" />
+            <div className="mini-measure">
+              <strong>39</strong>
+              <span>
+                screenshots in the
+                <br />
+                documented runtime comparison
+              </span>
+            </div>
+          </article>
+          <div className="spread__media">
+            <div className="print-object">
+              <ProjectImage id="screenshot-declutterer" />
+              <span className="print-object__seal">
+                LOCAL
+                <br />
+                FIRST
+              </span>
+            </div>
+          </div>
+        </div>
+        <article className="era-spread" id="chapter-researchagent">
+          <div className="spread__media">
+            <ProjectImage id="researchagent" />
+            <p className="margin-note">{copy.researchagent.recognition}</p>
+          </div>
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.researchagent.eyebrow}</p>
+            <h3>{copy.researchagent.title}</h3>
+            <p>{copy.researchagent.copy}</p>
+            <StoryLink slug="researchagent-evidence" />
+          </div>
+        </article>
+        <div className="era-spread lab-notes">
+          <div id="chapter-provenance">
+            <PolicyWidget />
+            <StoryLink slug="mandateflow-provenance">
+              Why provenance changes the answer
+            </StoryLink>
+          </div>
+          <div className="lab-notes__stack">
+            <div id="chapter-performance">
+              <Note slug="apple-health-importer" />
+            </div>
+            <Note slug="yald-agent-logs" />
+          </div>
+        </div>
+        <div className="learning-strip">
+          <div className="learning-strip__stamp" aria-hidden="true">
+            a little
+            <br />
+            <strong>every day.</strong>
+          </div>
+          <div>
+            <p className="eyebrow">Learning log / AWS certifications</p>
+            <h3>The study tool came along for the ride.</h3>
+            <p>
+              Cloud architecture, a home-built quiz tool, and study sessions on
+              the MRT. Five AWS certifications, with the useful lessons kept
+              along the way.
+            </p>
+            <StoryLink slug="aws-learning-by-building">
+              Open the learning notes
+            </StoryLink>
+          </div>
+        </div>
+        <div className="era-more">
+          <Link href="/projects">
+            More from the workbench <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/journal">
+            All field notes <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </Era>
+      <Era theme="studio">
+        <article className="era-spread studio-spread" id="chapter-fitback">
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.fitback.eyebrow}</p>
+            <h3>{copy.fitback.title}</h3>
+            <p>{copy.fitback.copy}</p>
+            <StoryLink slug="fitback-size-recommendation" />
+            <p className="recognition-line">{copy.fitback.recognition}</p>
+          </div>
+          <div className="spread__media">
+            <div className="fitback-frame">
+              <span className="fitback-frame__label">FIT / BACK</span>
+              <ProjectImage id="fitback" caption={copy.fitback.caption} />
+            </div>
+            <div className="fit-tokens" aria-label="Fitback inputs">
+              <span>
+                2<br />
+                <small>photos</small>
+              </span>
+              <span>
+                17
+                <br />
+                <small>keypoints</small>
+              </span>
+              <span>
+                you
+                <br />
+                <small>fit preference</small>
+              </span>
+            </div>
+          </div>
+        </article>
+        <div className="era-spread photo-interlude" id="chapter-photo-pause">
+          <figure className="personal-print">
+            <Image
+              src={siteContent.hero.images[11].image}
+              alt={siteContent.hero.images[11].alt}
+              sizes="(max-width: 760px) 80vw, 360px"
+            />
+            <figcaption>A little room for the things in between.</figcaption>
+          </figure>
+          <div className="interlude-copy">
+            <p className="eyebrow">From the camera roll</p>
+            <p>
+              Projects leave a trail.
+              <br />
+              So do the people
+              <br />
+              <em>and the little moments.</em>
+            </p>
+            <span>Personal photographs, collected along the way.</span>
+          </div>
+        </div>
+      </Era>
+      <Era theme="field">
+        <article className="era-spread" id="chapter-systems">
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.field.eyebrow}</p>
+            <h3>{copy.field.title}</h3>
+            <p>{copy.field.copy}</p>
+            <ul className="work-periods">
+              {copy.field.periods.map((period) => (
+                <li key={period}>{period}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="spread__media">
+            <SystemWidget />
+          </div>
+        </article>
+        <div className="era-spread field-photo">
+          <div className="field-note">
+            <span className="field-note__pin" aria-hidden="true" />
+            <p className="eyebrow">A note to keep</p>
+            <p>
+              Good documentation
+              <br />
+              is part of
+              <br />
+              <em>the working system.</em>
+            </p>
+          </div>
+          <figure className="personal-print">
+            <Image
+              src={siteContent.hero.images[4].image}
+              alt={siteContent.hero.images[4].alt}
+              sizes="(max-width: 760px) 80vw, 440px"
+            />
+            <figcaption>{copy.field.caption}</figcaption>
+          </figure>
+        </div>
+      </Era>
+      <Era theme="play">
+        <div className="era-spread" id="chapter-archive">
+          <div className="spread__media">
+            <div className="retro-monitor">
+              <div className="retro-monitor__screen">
+                <Image
+                  src={siteContent.archive[4].image}
+                  alt={siteContent.archive[4].imageAlt}
+                  sizes="(max-width: 760px) 80vw, 460px"
+                />
+              </div>
+              <div className="retro-monitor__chin">
+                <span>BREAKOUT / C + SDL2</span>
+                <i aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.play.eyebrow}</p>
+            <h3>{copy.play.title}</h3>
+            <p>{copy.play.copy}</p>
+            <Link className="text-link" href="/projects#experiments">
+              Explore the earlier experiments <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </div>
+        <div className="cartridge-shelf">
+          {siteContent.archive
+            .filter((project) =>
+              ["HealthMate", "InvoiceHub", "3D Angry Bird Space"].includes(
+                project.title,
+              ),
+            )
+            .map((project, index) => (
+              <Link
+                className="project-cartridge"
+                href={`/projects#${project.title === "HealthMate" ? "healthmate" : project.title === "InvoiceHub" ? "invoicehub" : "angry-bird-space"}`}
+                key={project.title}
+              >
+                <div>
+                  <span>0{index + 1}</span>
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    sizes="(max-width: 760px) 80vw, 300px"
+                  />
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.period}</p>
+                <span className="project-cartridge__arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+            ))}
+        </div>
+        <aside className="teaching-note">
+          <span aria-hidden="true">&gt;_</span>
+          <div>
+            <p className="eyebrow">
+              SUTD / teaching assistant / Nov 2021 — Jan 2022
+            </p>
+            <p>
+              Teaching Python meant helping other people find their way through
+              the same questions—coursework, projects, and Raspberry Pi lab
+              setups.
+            </p>
+          </div>
+        </aside>
+        <p className="archive-footnote">
+          Some dates overlap. These are chapters in the work, rather than neat
+          boxes around a life.
+        </p>
+      </Era>
+    </div>
   );
 }

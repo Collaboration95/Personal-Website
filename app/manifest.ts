@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Guru Prasath — Software engineer / systems that earn trust",
+    name: "Guru Prasath — things built, lessons kept",
     short_name: "Guru Prasath",
     description: "A personal working archive by Guru Prasath.",
     start_url: "/",

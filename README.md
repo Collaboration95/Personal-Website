@@ -1,76 +1,80 @@
-# Guru Prasath — personal portfolio
+# Guru Prasath — things built, lessons kept
 
-This is a static-first Next.js App Router portfolio for Guru Prasath. The page
-is one continuous story: a photo-led introduction, a content-driven timeline of
-real projects and work notes, and a closing contact section.
+A personal portfolio and journal: one photo-led welcome, four visual eras,
+substantial articles, a broader project collection, and a closing invitation.
+The timeline travels from current experiments back through earlier work.
 
-The active visual direction is Warm Paper. See [DESIGN.md](DESIGN.md) for the
-palette, type choices, motion boundaries, and layout intent. See the companion
-delivery notes for the rebuild audit:
+- **The lab:** local tools, agents, and measured experiments; graphite and lilac.
+- **The studio:** Fitback and product work; warm paper and editorial type.
+- **In the field:** Primech R&D; teal drafting surfaces and a system trace.
+- **The playground:** early games, bots, and experiments; sage retro objects.
 
-- [REBUILD_STATUS.md](REBUILD_STATUS.md) — current delivery state and known limits
-- [CONTENT_INVENTORY.md](CONTENT_INVENTORY.md) — verified copy and link sources
-- [ASSET_INVENTORY.md](ASSET_INVENTORY.md) — image provenance and optimization notes
-- [ARCHITECTURE_DECISION.md](ARCHITECTURE_DECISION.md) — why Next.js remains the stack
-- [VERCEL_AUDIT.md](VERCEL_AUDIT.md) — safe preview/production route
+Pip, an original pocket-otter companion, changes material with each era. The
+fixed dial tracks the page and becomes a compact edge control with reserved space on phones.
+Images, text, and ordinary navigation remain available without JavaScript.
+Motion respects reduced-motion preferences; the photo stack has explicit
+controls and never advances automatically.
 
-## Local development
-
-Requires Node.js and npm.
+## Development
 
 ```bash
 npm ci
 npm run dev
+npm run check
 ```
 
-Open <http://localhost:3000>. The same commands are available as Make targets:
+The dev server uses `.next-dev`; builds use `.next`. A production preview can
+run separately with `npm run start -- --port 3100` after a build. No new runtime
+dependency was added for the era design, widgets, journal, or companions.
 
-```bash
-make install
-make dev
-```
+## Content
 
-Development output is isolated in `.next-dev`, so running a production build
-does not corrupt an active dev server.
+| File | Responsibility |
+| --- | --- |
+| `lib/data.ts` | Personal details, social/contact URLs, supplied photos, early archive |
+| `lib/eras.ts` | Era labels, periods, themes, and navigation |
+| `lib/home-content.ts` | Curated homepage story copy |
+| `lib/projects.ts` | Public project catalogue, status, credits, images, and links |
+| `lib/journal.ts` | Typed article records and substantial article bodies |
+| `lib/journal-types.ts` | Shared article/project contracts |
+| `lib/publication.ts` | Cover selection, reading times, dates, XML escaping |
 
-Useful checks:
+The initial edition contains 27 selected projects and eight articles. Project
+images are actual public screenshots or retained early portfolio assets.
+Team projects and authored forks retain their context. Do not invent links for
+older projects whose public repository has not been established.
 
-```bash
-make lint       # Next lint
-make typecheck  # TypeScript without emit
-make test       # content/assets validation
-make check      # lint + typecheck + content test + production build
-make build      # production build only
-make start      # serve the production build locally
-```
+To add an article, add a `JournalArticle` in `lib/journal.ts`, with a unique
+slug, category, era, description, sources, and body blocks. `publishedAt` dates
+the **website edition**; `eventLabel` describes when the underlying work took
+place. Set `status: "draft"` until ready: drafts have no generated route, feed
+entry, index listing, or sitemap entry. Source evidence and private working
+material must not be copied into public assets or article records.
 
-## Updating content
+## Routes and checks
 
-The source of truth is [`lib/data.ts`](lib/data.ts). Keep personal details,
-project descriptions, technology labels, periods, social URLs, and alt text
-there. The visual components in `components/` should render the data rather
-than become a second content store.
+- `/`: curated era journey. Earlier project hash links still resolve.
+- `/journal`: server-rendered article index with category links.
+- `/journal/[slug]`: generated articles with canonical, social, and structured metadata.
+- `/projects`: the wider collection grouped by purpose.
+- `/feed.xml`, `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`.
 
-Project links are intentionally absent until a repository or live URL is
-verified. Add them to the typed model and the project renderer together when
-they become available. Do not add a live Instagram feed; add only user-owned
-photo exports with a source and alt-text note in `ASSET_INVENTORY.md`.
+`npm run check` runs ESLint, TypeScript, content-integrity checks, and the
+production build. Content checks cover unique IDs, relationships, publication
+filtering, public-source URLs, image existence/dimensions, and companion alpha
+and size budgets. Browser checks are also required for layout or interaction
+changes; build success alone does not establish visual correctness.
 
-## Images and fonts
+## Design and provenance
 
-Images are imported through `next/image`, which reserves layout space and emits
-responsive optimized variants. The hero starts with the existing portrait and
-quietly crossfades through the metadata-stripped images in
-`public/portrait-reel/`, keeping each source aspect ratio. Most project visuals
-were restored from this repository's Git history, with the DetectT demo copied
-from its public repository. Outfit, Figtree, and JetBrains Mono are loaded
-through `next/font/google` with `swap` display and system fallbacks.
+- [DESIGN.md](DESIGN.md): current visual and interaction decisions.
+- [Era plan](docs/design/era-refresh-plan.md): planning separated from implementation.
+- [Content inventory](CONTENT_INVENTORY.md): publication evidence and limits.
+- [Project image sources](docs/design/project-image-sources.md): public originals and credits.
+- [Companion assets](docs/design/companion-assets.md): exact generation prompts and validation.
+- [Rebuild status](REBUILD_STATUS.md): verification and review/deployment state.
 
-## Deployment
-
-The repository's GitHub default branch is `main`, and GitHub reports the
-connected Vercel homepage as
-<https://guruprasathgopal-collaboration95s-projects.vercel.app>. Push a feature
-branch to create a Vercel preview through the existing integration, verify that
-preview in a browser, then merge to `main` for production. No Vercel token,
-environment secret, or custom-domain setting belongs in this repository.
+The existing Next App Router/Vercel architecture is retained. A supported-version
+Next upgrade is separate maintenance: this refresh does not claim to have
+upgraded the existing Next 14 runtime. Keep `NEXT_PUBLIC_SITE_URL` aligned with
+the chosen production domain when deployment changes.

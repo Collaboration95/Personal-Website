@@ -1,3 +1,14 @@
+# Era and journal refresh — 20 October 2026
+
+Four career worlds, eight substantive journal articles, 27 selected projects,
+source-backed project images, four Pip companion materials, tactile CSS objects,
+and an accessible edge navigator. The photo stack is manually controlled.
+
+See REBUILD_STATUS.md for the final build, route, review, and browser evidence.
+This is a review-branch update; a production merge is a separate action.
+
+---
+
 # Portfolio rebuild release candidate
 
 ## Summary

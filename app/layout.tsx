@@ -25,33 +25,34 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteContent.siteUrl),
   title: {
-    default: "Guru Prasath — Software engineer / systems that earn trust",
+    default: "Guru Prasath — things built, lessons kept",
     template: "%s — Guru Prasath",
   },
   description: siteContent.description,
   alternates: {
     canonical: "/",
+    types: { "application/rss+xml": "/feed.xml" },
   },
   openGraph: {
     type: "website",
     url: "/",
-    title: "Guru Prasath — Software engineer / systems that earn trust",
+    title: "Guru Prasath — things built, lessons kept",
     description: siteContent.description,
     siteName: "Guru Prasath",
     images: [
       {
-        url: "/intro-alone.jpeg",
-        width: 373,
-        height: 322,
-        alt: siteContent.hero.imageAlt,
+        url: "/social-card.png",
+        width: 1200,
+        height: 630,
+        alt: "Guru Prasath — software, small experiments, and the stories behind them.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guru Prasath — Software engineer / systems that earn trust",
+    title: "Guru Prasath — things built, lessons kept",
     description: siteContent.description,
-    images: ["/intro-alone.jpeg"],
+    images: ["/social-card.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -72,7 +73,6 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <div className="atmosphere" aria-hidden="true" />
         {children}
       </body>
     </html>

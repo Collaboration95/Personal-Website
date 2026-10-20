@@ -1,9 +1,23 @@
 # Asset inventory
 
+## 20 October 2026 edition
+
+The four era companions and six new public project images are documented in
+[companion prompts](docs/design/companion-assets.md) and
+[project image sources](docs/design/project-image-sources.md). `public/social-card.png`
+is a repository-drawn typographic social preview, not a project screenshot.
+
+The hero now uses a manually browsed, fixed-geometry photo stack. Several of the
+supplied photos also form timeline interludes; their captions do not invent
+dates or associations with particular projects. The original asset records
+below preserve provenance.
+
+## Original asset records
+
 | Asset | Source | Treatment | Status |
 | --- | --- | --- | --- |
 | `public/intro-alone.jpeg` | Historical repository commit `cae50a4` | Editorial portrait crop with explicit dimensions and descriptive alt text | Restored |
-| `public/portrait-reel/*.jpg` | User-supplied `/Desktop/personal-website-images/` set | Optimized, auto-oriented, metadata-stripped hero reel; the current portrait remains the first frame and later frames keep their source aspect ratios | Added |
+| `public/portrait-reel/*.jpg` | User-supplied `/Desktop/personal-website-images/` set | Optimized, auto-oriented, metadata-stripped personal photographs, reused in the manual photo stack and timeline | Added |
 | `public/detectt-posenet-setup.png` | Public `Collaboration95/DetectT` repository | DetectT pose-detection prototype demo for the archive card | Added |
 | `public/HealthMate.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |
 | `public/InvoiceHub.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |
@@ -24,6 +38,8 @@ was stripped before publication. No Instagram media, stock imagery, or remote
 image URL is used at runtime, and Next's optimized image response is used for
 rendered views.
 
-## Missing asset note
+## Current coverage
 
-The requested broader personal-photography rhythm cannot be fully populated from the repository alone. The layout supports additional editorial photo entries, but it currently uses the verified portrait for one personal moment rather than inventing or scraping a social feed. The MandateFlow, Screenshot Declutterer, and DetectT visuals are local project assets copied into `public/` for stable same-origin delivery.
+The supplied photo set supports the personal interludes now implemented. No
+social feed is scraped. Project illustrations and generated companions are
+same-origin assets with explicit dimensions and responsive/lazy delivery.
