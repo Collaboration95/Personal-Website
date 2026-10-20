@@ -39,9 +39,9 @@ export const projects: readonly PortfolioProject[] = [
     category: "AI & data",
     summary:
       "Search free sources first, then decide whether another piece of evidence is worth buying. This team demo tracks budgets, checks delivery proofs, and handles challenges and refunds with a synthetic corpus and testnet or simulated payments.",
-    note: "The receipt matters as much as the answer.",
+    note: "Presented on the main stage at AI Tinkerers Singapore, 10 October 2026. Top three Cloud Run demos; earlier SingHacks finalist.",
     period: "September–October 2026",
-    status: "Team demo · retained walkthrough",
+    status: "Team project · main-stage presentation",
     technologies: ["TypeScript", "React", "x402", "XRPL Testnet"],
     image: {
       src: "/project-images/researchagent.webp",
@@ -57,6 +57,10 @@ export const projects: readonly PortfolioProject[] = [
       {
         label: "Walkthrough",
         href: "https://collaboration95.github.io/theFastandtheFungible/talk/",
+      },
+      {
+        label: "Talk slides",
+        href: "https://collaboration95.github.io/theFastandtheFungible/slides/",
       },
     ],
     articleSlug: "researchagent-evidence",

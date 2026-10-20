@@ -17,11 +17,11 @@ supported-version upgrade.
   do not get routes; the same publication manifest generates feed and sitemap.
 - `/journal` uses server-rendered query filters; it does not need a client search
   service or a CMS. Article bodies are typed data blocks, with no remote MDX.
-- Client code is limited to the dial, explicit photo controls, two illustrative
-  widgets, and decorative image failure handling. CSS and static transparent
-  artwork provide depth without a mandatory canvas or 3D runtime.
+- Client code is limited to the dial, pausable photo rotation, two illustrative
+  widgets, and pet interactions. Four generated pose sheets support each era’s
+  companion; CSS provides brief reaction motion without a canvas runtime.
 - The existing image optimizer and fonts are retained. No runtime dependency was
-  added. The final build reports approximately 106 kB first-load JS for home.
+  added. The final build reports approximately 108 kB first-load JS for home.
 - Development output remains separate in `.next-dev`, allowing build checks
   alongside an active local development server.
 

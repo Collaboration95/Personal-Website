@@ -64,6 +64,11 @@ export default function Article({ params }: { params: { slug: string } }) {
     ({ slug }) => slug === params.slug,
   );
   if (!article) notFound();
+  const related = getPublishedArticles().filter(
+    (other) =>
+      other.slug !== article.slug &&
+      other.projectIds.some((id) => article.projectIds.includes(id)),
+  );
   const cover = articleCover(article);
   const era = eras.find(({ theme }) => theme === article.era)!;
   const schema = {
@@ -123,7 +128,7 @@ export default function Article({ params }: { params: { slug: string } }) {
                 sizes="(max-width: 760px) 90vw, 1000px"
                 priority
               />
-              <figcaption>{cover.alt}</figcaption>
+              <figcaption>{cover.caption ?? cover.alt}</figcaption>
             </figure>
           )}
           <div className="article-body">
@@ -182,6 +187,23 @@ export default function Article({ params }: { params: { slug: string } }) {
                 ))}
               </ul>
             </section>
+            {related.length > 0 && (
+              <section
+                className="article-sources"
+                aria-labelledby="related-title"
+              >
+                <h2 id="related-title">More from this project</h2>
+                <ul>
+                  {related.map((other) => (
+                    <li key={other.slug}>
+                      <Link href={`/journal/${other.slug}`}>
+                        {other.title} ↗
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         </article>
         <nav className="article-return" aria-label="Continue reading">

@@ -38,16 +38,21 @@ scrolling does not recolor the whole document or hide unrevealed content.
 
 ## Motion and interaction
 
-The photo stack is user-controlled and reserves its geometry. It has no timer.
+The photo stack rotates every 4.5 seconds through all fourteen supplied images.
+Pause/resume and previous/next controls remain visible. Hover, keyboard focus,
+off-screen placement, and hidden tabs pause rotation; reduced motion starts in
+manual mode. The current loaded photo stays visible while a selected image loads
+or if its request fails. The frame reserves its geometry.
 The policy example switches between two documented fixture routes; the system
 trace exposes the purpose of each boundary. Both use native buttons and text
 feedback. These are illustrative widgets, not live infrastructure or payments.
 
-Pip is a generated transparent image with a consistent silhouette and baseline,
-not a canvas runtime. Era headers show the material variant; the small desktop
-dial companion changes with the active era. A failed decorative image is
-omitted without affecting content. Desktop hover can briefly tilt an object;
-there are no perpetual loops, scroll locks, cursor capture, or sound.
+Pip uses generated transparent sprite sheets with a consistent silhouette and
+baseline. Wave, Snack, Nap, and Wake are native buttons; a tap on the pet cycles
+reactions. The dial and journal versions use compact pet buttons. Discrete poses
+provide feedback even with reduced motion; brief CSS wave/hop motions run only
+when motion is enabled. Original stills remain as loading/failure fallbacks.
+There are no scroll locks, cursor capture, or sound.
 
 Reduced motion disables transitions and smooth scrolling. Static layouts,
 photographs, text, anchors, and article links work without JavaScript. Controls
@@ -63,7 +68,9 @@ activation focuses the target section. On phones the dial stays at the edge with
 Use real, source-backed project figures and the user's existing photo exports.
 Do not create fake screenshots or imply that personal photo dates/people match
 particular projects. Generated artwork is confined to the fictional companion.
-The four 512px alpha WebPs total about 134 KB; project images are optimized and
+The four original 512px alpha WebPs total about 134 KB; four new 512px sprite
+sheets add 203 KB and sixteen poses. Authentic event photos now document the
+ResearchAgent main-stage presentation with gallery attribution. Images are optimized and
 lazy-loaded. Exact sources and prompts are recorded in the design notes.
 
 ## GitHub counterpart

@@ -1,0 +1,536 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen.imagegen",
+  "sharp": "0.35.3",
+  "libwebp": "1.6.0",
+  "sheet": {
+    "width": 512,
+    "height": 512,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "columns": 2,
+    "rows": 2,
+    "baseline": 225
+  },
+  "frames": {
+    "idle": {
+      "x": 0,
+      "y": 0,
+      "width": 256,
+      "height": 256
+    },
+    "wave": {
+      "x": 256,
+      "y": 0,
+      "width": 256,
+      "height": 256
+    },
+    "happy": {
+      "x": 0,
+      "y": 256,
+      "width": 256,
+      "height": 256
+    },
+    "sleep": {
+      "x": 256,
+      "y": 256,
+      "width": 256,
+      "height": 256
+    }
+  },
+  "assets": {
+    "lab": {
+      "path": "/companions/sprites/pip-lab.webp",
+      "bytes": 56412,
+      "sha256": "cbd6dc33d62beec5a7d9df9be78f1a25c07cc2f405695e06d1878654f1fa63ca",
+      "reference": {
+        "file": "pip-lab.webp",
+        "sha256": "b61ff2e51cc3097b1117d1bdfea2fe1d9fb56cc7c2c08cbfd68646d19bb7258a"
+      },
+      "master": {
+        "file": "exec-6c0d12fa-99e3-4a3d-89bc-155b778edd64.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "5538569dde21a7c5ab7cef3170430a1d20b0a9219d09e007770274e55287a614"
+      },
+      "scale": 0.3391003460207612,
+      "packing": [
+        {
+          "pose": "idle",
+          "sourceCrop": {
+            "left": 99,
+            "top": 66,
+            "width": 525,
+            "height": 573
+          },
+          "resized": {
+            "width": 178,
+            "height": 194
+          },
+          "cellOffset": {
+            "left": 39,
+            "top": 31
+          }
+        },
+        {
+          "pose": "wave",
+          "sourceCrop": {
+            "left": 670,
+            "top": 61,
+            "width": 567,
+            "height": 576
+          },
+          "resized": {
+            "width": 192,
+            "height": 195
+          },
+          "cellOffset": {
+            "left": 32,
+            "top": 30
+          }
+        },
+        {
+          "pose": "happy",
+          "sourceCrop": {
+            "left": 133,
+            "top": 656,
+            "width": 487,
+            "height": 543
+          },
+          "resized": {
+            "width": 165,
+            "height": 184
+          },
+          "cellOffset": {
+            "left": 46,
+            "top": 41
+          }
+        },
+        {
+          "pose": "sleep",
+          "sourceCrop": {
+            "left": 646,
+            "top": 784,
+            "width": 578,
+            "height": 407
+          },
+          "resized": {
+            "width": 196,
+            "height": 138
+          },
+          "cellOffset": {
+            "left": 30,
+            "top": 87
+          }
+        }
+      ],
+      "alpha": {
+        "transparent": 171724,
+        "partial": 88634,
+        "opaque": 1786,
+        "nontransparentOutside26pxMargin": 0
+      },
+      "frameAlphaBounds": [
+        {
+          "pose": "idle",
+          "left": 39,
+          "top": 31,
+          "right": 216,
+          "bottom": 224
+        },
+        {
+          "pose": "wave",
+          "left": 32,
+          "top": 30,
+          "right": 223,
+          "bottom": 224
+        },
+        {
+          "pose": "happy",
+          "left": 46,
+          "top": 41,
+          "right": 210,
+          "bottom": 224
+        },
+        {
+          "pose": "sleep",
+          "left": 30,
+          "top": 87,
+          "right": 225,
+          "bottom": 224
+        }
+      ]
+    },
+    "studio": {
+      "path": "/companions/sprites/pip-studio.webp",
+      "bytes": 47092,
+      "sha256": "c862b3b0bb46b17ca5e64832ce7b78f17ac4ee8f60791206f638cf920a6ec151",
+      "reference": {
+        "file": "pip-studio.webp",
+        "sha256": "9dd2ae096d2276c089178c6664ec141d83e883c5bb4124050b3f848c27132952"
+      },
+      "master": {
+        "file": "exec-0006d6d8-3bf3-4790-8562-4be5a11f9932.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "df1d61cc3d428f182a214a2da5be56a981e70234971b8cf5f78630acfa5da000"
+      },
+      "scale": 0.34265734265734266,
+      "packing": [
+        {
+          "pose": "idle",
+          "sourceCrop": {
+            "left": 115,
+            "top": 54,
+            "width": 520,
+            "height": 568
+          },
+          "resized": {
+            "width": 178,
+            "height": 195
+          },
+          "cellOffset": {
+            "left": 39,
+            "top": 30
+          }
+        },
+        {
+          "pose": "wave",
+          "sourceCrop": {
+            "left": 721,
+            "top": 50,
+            "width": 503,
+            "height": 572
+          },
+          "resized": {
+            "width": 172,
+            "height": 196
+          },
+          "cellOffset": {
+            "left": 42,
+            "top": 29
+          }
+        },
+        {
+          "pose": "happy",
+          "sourceCrop": {
+            "left": 150,
+            "top": 643,
+            "width": 470,
+            "height": 548
+          },
+          "resized": {
+            "width": 161,
+            "height": 188
+          },
+          "cellOffset": {
+            "left": 48,
+            "top": 37
+          }
+        },
+        {
+          "pose": "sleep",
+          "sourceCrop": {
+            "left": 659,
+            "top": 769,
+            "width": 519,
+            "height": 418
+          },
+          "resized": {
+            "width": 178,
+            "height": 143
+          },
+          "cellOffset": {
+            "left": 39,
+            "top": 82
+          }
+        }
+      ],
+      "alpha": {
+        "transparent": 179057,
+        "partial": 81292,
+        "opaque": 1795,
+        "nontransparentOutside26pxMargin": 0
+      },
+      "frameAlphaBounds": [
+        {
+          "pose": "idle",
+          "left": 39,
+          "top": 30,
+          "right": 216,
+          "bottom": 224
+        },
+        {
+          "pose": "wave",
+          "left": 42,
+          "top": 29,
+          "right": 213,
+          "bottom": 224
+        },
+        {
+          "pose": "happy",
+          "left": 48,
+          "top": 37,
+          "right": 208,
+          "bottom": 224
+        },
+        {
+          "pose": "sleep",
+          "left": 39,
+          "top": 82,
+          "right": 216,
+          "bottom": 224
+        }
+      ]
+    },
+    "field": {
+      "path": "/companions/sprites/pip-field.webp",
+      "bytes": 52886,
+      "sha256": "a96a4d7d17c2b5395b38d9806eba127ee5c25b427908bde08dd496c38326af3b",
+      "reference": {
+        "file": "pip-field.webp",
+        "sha256": "0a9b6871b7c7bfbb7ac4e990a54ea8c0886ff3458dfbcefcca70e74f76b3dbaa"
+      },
+      "master": {
+        "file": "exec-5eb0386b-503a-40cb-8ffa-7248cac09729.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "73647c9f822aed767cd974b48586c4454f5cf0850453dcae7f2d148ef7eccb53"
+      },
+      "scale": 0.34146341463414637,
+      "packing": [
+        {
+          "pose": "idle",
+          "sourceCrop": {
+            "left": 104,
+            "top": 60,
+            "width": 517,
+            "height": 569
+          },
+          "resized": {
+            "width": 177,
+            "height": 194
+          },
+          "cellOffset": {
+            "left": 40,
+            "top": 31
+          }
+        },
+        {
+          "pose": "wave",
+          "sourceCrop": {
+            "left": 677,
+            "top": 55,
+            "width": 555,
+            "height": 574
+          },
+          "resized": {
+            "width": 190,
+            "height": 196
+          },
+          "cellOffset": {
+            "left": 33,
+            "top": 29
+          }
+        },
+        {
+          "pose": "happy",
+          "sourceCrop": {
+            "left": 120,
+            "top": 652,
+            "width": 506,
+            "height": 561
+          },
+          "resized": {
+            "width": 173,
+            "height": 192
+          },
+          "cellOffset": {
+            "left": 42,
+            "top": 33
+          }
+        },
+        {
+          "pose": "sleep",
+          "sourceCrop": {
+            "left": 674,
+            "top": 763,
+            "width": 548,
+            "height": 434
+          },
+          "resized": {
+            "width": 187,
+            "height": 148
+          },
+          "cellOffset": {
+            "left": 35,
+            "top": 77
+          }
+        }
+      ],
+      "alpha": {
+        "transparent": 175622,
+        "partial": 84705,
+        "opaque": 1817,
+        "nontransparentOutside26pxMargin": 0
+      },
+      "frameAlphaBounds": [
+        {
+          "pose": "idle",
+          "left": 40,
+          "top": 31,
+          "right": 216,
+          "bottom": 224
+        },
+        {
+          "pose": "wave",
+          "left": 33,
+          "top": 29,
+          "right": 222,
+          "bottom": 224
+        },
+        {
+          "pose": "happy",
+          "left": 42,
+          "top": 33,
+          "right": 214,
+          "bottom": 224
+        },
+        {
+          "pose": "sleep",
+          "left": 35,
+          "top": 77,
+          "right": 221,
+          "bottom": 224
+        }
+      ]
+    },
+    "play": {
+      "path": "/companions/sprites/pip-play.webp",
+      "bytes": 46634,
+      "sha256": "2754530fea1253fc9df7dc87b6b76488c30cef7a70e8827fde48a42dafc00d0d",
+      "reference": {
+        "file": "pip-play.webp",
+        "sha256": "c7218ccefca717b4f5d10dae24b84c78a1c60de575efa3896528567248e99e5a"
+      },
+      "master": {
+        "file": "exec-7cebe492-7850-4e3f-8748-5b1eb74d9561.png",
+        "width": 1254,
+        "height": 1254,
+        "sha256": "213095e3cb35a9544c1b7b7a0eb8e55240e6ae6fcaf2bb2ba7475876dad52219"
+      },
+      "scale": 0.36363636363636365,
+      "packing": [
+        {
+          "pose": "idle",
+          "sourceCrop": {
+            "left": 147,
+            "top": 104,
+            "width": 473,
+            "height": 539
+          },
+          "resized": {
+            "width": 172,
+            "height": 196
+          },
+          "cellOffset": {
+            "left": 42,
+            "top": 29
+          }
+        },
+        {
+          "pose": "wave",
+          "sourceCrop": {
+            "left": 704,
+            "top": 105,
+            "width": 473,
+            "height": 538
+          },
+          "resized": {
+            "width": 172,
+            "height": 196
+          },
+          "cellOffset": {
+            "left": 42,
+            "top": 29
+          }
+        },
+        {
+          "pose": "happy",
+          "sourceCrop": {
+            "left": 160,
+            "top": 681,
+            "width": 463,
+            "height": 516
+          },
+          "resized": {
+            "width": 168,
+            "height": 188
+          },
+          "cellOffset": {
+            "left": 44,
+            "top": 37
+          }
+        },
+        {
+          "pose": "sleep",
+          "sourceCrop": {
+            "left": 671,
+            "top": 816,
+            "width": 506,
+            "height": 367
+          },
+          "resized": {
+            "width": 184,
+            "height": 133
+          },
+          "cellOffset": {
+            "left": 36,
+            "top": 92
+          }
+        }
+      ],
+      "alpha": {
+        "transparent": 179142,
+        "partial": 81196,
+        "opaque": 1806,
+        "nontransparentOutside26pxMargin": 0
+      },
+      "frameAlphaBounds": [
+        {
+          "pose": "idle",
+          "left": 42,
+          "top": 29,
+          "right": 213,
+          "bottom": 224
+        },
+        {
+          "pose": "wave",
+          "left": 42,
+          "top": 29,
+          "right": 213,
+          "bottom": 224
+        },
+        {
+          "pose": "happy",
+          "left": 44,
+          "top": 37,
+          "right": 211,
+          "bottom": 224
+        },
+        {
+          "pose": "sleep",
+          "left": 36,
+          "top": 92,
+          "right": 219,
+          "bottom": 224
+        }
+      ]
+    }
+  },
+  "rejectedPlayMaster": {
+    "file": "exec-ee0490eb-dce0-4759-a7ce-38ed9467f48e.png",
+    "sha256": "a21a060c498b4c1ef740452d689230693e246b746cbaa221fae79ebcb2d79f72",
+    "reason": "Insufficient source gutters: character bounding rectangles overlap at the row/column boundaries; regenerated rather than clipping artwork."
+  }
+}

@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 const filters = [
   { value: "all", label: "All notes" },
   { value: "project", label: "Projects" },
+  { value: "talk", label: "Talks & demos" },
   { value: "hackathon", label: "Hackathons" },
   { value: "certification", label: "Learning & certifications" },
 ] as const;
@@ -125,7 +126,7 @@ export default function Journal({
                   </Link>
                 ) : (
                   <div className="journal-entry__object">
-                    <Companion theme={article.era} size={140} />
+                    <Companion theme={article.era} size={140} compact />
                   </div>
                 )}
               </article>

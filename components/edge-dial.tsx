@@ -79,7 +79,7 @@ export default function EdgeDial() {
       data-era={active.theme}
     >
       <div className="edge-dial__companion">
-        <Companion key={active.theme} theme={active.theme} size={64} />
+        <Companion key={active.theme} theme={active.theme} size={64} compact />
       </div>
       <ol className="edge-dial__list">
         {eraNavigation.map(({ id, label }, index) => (

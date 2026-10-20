@@ -1,6 +1,6 @@
 # Content inventory — 20 October 2026
 
-The delivered edition has 27 selected projects and eight substantial articles.
+The delivered edition has 27 selected projects and nine substantial articles.
 6.1 Sol researched 54 public repositories, related team work, and the user's
 published LinkedIn archive. Private research files are not part of the site.
 The typed records in `lib/projects.ts` and `lib/journal.ts` are the publication
@@ -11,6 +11,7 @@ source of truth; `lib/data.ts` retains personal information and original photos.
 | Article | Public trail | Publication boundary |
 | --- | --- | --- |
 | The Commons | [Source](https://github.com/Collaboration95/common-grounds-makeathon), [demo](https://www.youtube.com/watch?v=SN3WXWuIOi8) | Solo makeathon build; Best Use of Tech. No People's Choice claim. |
+| ResearchAgent main stage | [Official event](https://singapore.aitinkerers.org/p/ai-tinkerers-singapore-saturday-demo-meetup-with-joe-heitzeberg-oct-10), [slides](https://collaboration95.github.io/theFastandtheFungible/slides/) | Presented on 10 October 2026; top-three Cloud Run demo and US$100 credits are the published self-report, distinct from the SingHacks result. |
 | ResearchAgent | [Team source](https://github.com/Collaboration95/theFastandtheFungible), [retained walkthrough](https://collaboration95.github.io/theFastandtheFungible/talk/) | SingHacks finalist; fictional corpus/testnet; removed Cloud Run service is not a live link. |
 | MandateFlow | [Canonical team source](https://github.com/tradaokamsa/MandateFlow) | Starter and team credited; Go gateway contribution, fixture-specific policy. |
 | Screenshot naming | [Source](https://github.com/Collaboration95/screenshot-declutterer) | macOS workflow; 39-image/16 GB Mac evaluation is a bounded observation. |
@@ -28,7 +29,8 @@ explain measurement conditions and attribution in more detail.
 NUS study is described as ongoing; SUTD is a completed undergraduate degree.
 Primech uses the recorded internship ranges without an aggregate-duration claim.
 The earlier Python teaching-assistant role is retained in the playground era.
-Photos are personal interludes, not evidence of an associated employer or event.
+The original camera-roll photos remain personal interludes. The two new stage
+photos have verified AI Tinkerers event-gallery context and displayed attribution.
 
 The 25 public-source catalogue entries exclude empty repositories, generic forks,
 and exercises; related versions count as one project. Two earlier portfolio

@@ -1,6 +1,6 @@
 import type { EraTheme } from "./eras";
 
-export type ArticleKind = "project" | "hackathon" | "certification";
+export type ArticleKind = "project" | "hackathon" | "certification" | "talk";
 export type ArticleBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
@@ -27,7 +27,13 @@ export type JournalArticle = {
   eventLabel: string;
   status: "published" | "draft";
   projectIds: readonly string[];
-  cover?: { src: string; alt: string; width: number; height: number };
+  cover?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+  };
   blocks: readonly ArticleBlock[];
   sources: readonly { label: string; href: string }[];
 };

@@ -1,65 +1,64 @@
-# Era and journal refresh — 20 October 2026
+# Presentation and interactive companions — 20 October 2026
 
-The implementation is ready for review on `codex/portfolio-integration`, in
-[website PR #2](https://github.com/Collaboration95/Personal-Website/pull/2).
-This edition is not a production merge. The previous Vercel preview URL belongs
-to the older build and must not be used as evidence for this version.
+This follow-up implements the user's correction to the published era refresh.
+The current review branch is `codex/researchagent-presentation-pets`; the matching
+profile branch is `codex/researchagent-stage-story` in the sibling profile checkout.
 
 ## Delivered
 
-- A photo-led welcome, four distinct era worlds, a continuous timeline, and contact.
-- The lab, studio, field, and playground use different typography, surfaces,
-  project compositions, tactile CSS objects, and Pip companion variants.
-- A manually browsed photo stack; illustrative policy and system-trace widgets.
-- Eight substantial journal articles, category navigation, static article pages,
-  RSS, canonical/social metadata, and a sitemap.
-- 27 selected projects: 25 with verified public source trails and two retained
-  early-portfolio experiments without invented repository links.
-- Six additional optimized public project images and four generated alpha WebP
-  companions. Prompt/source records are in `docs/design/`.
-- A separate informal, image-led GitHub profile refresh, prepared in the sibling
-  `collaboration95-refresh-20261020` checkout on `codex/personal-project-shelf`.
-  The older unpublished `collaboration95` folder remains untouched.
+- ResearchAgent's 10 October main-stage presentation at AI Tinkerers Singapore
+  has a prominent homepage feature, a dedicated article, a Talks & demos filter,
+  authentic event photography with credits, and links to the slides/walkthrough.
+- The separate SingHacks finalist result and Cloud Run top-three demo distinction
+  retain their dates, team context, and scope. The retired hosting is explicit.
+- The hero rotates through all fourteen supplied photos every 4.5 seconds, with
+  pause/resume and manual browsing. It pauses on hover, keyboard focus, off-screen
+  placement and hidden tabs; reduced motion starts in manual mode.
+- Four Sol 6.1 generated sprite sheets contain sixteen distinct poses. All era,
+  dial, and journal pets respond to click/tap/keyboard input. Wave, snack, nap and
+  wake controls use ordinary buttons, visible focus and polite status feedback.
+- The journal now has nine articles; the project collection still has 27 entries.
+  No runtime dependency was added.
 
 ## Verification
 
-- Final `npm run check` passed: lint, TypeScript, content integrity, production build.
-- Content validation checks 27 project records, eight articles, 14 referenced
-  content-image records, four transparent companions, unique IDs, relationships,
-  source URL shape, image geometry, and draft exclusion.
-- The final production server passed HTTP checks for 14 page/filter variants,
-  eight RSS items, 11 sitemap URLs, canonical and feed-discovery tags, collection
-  Twitter metadata, internal fragments, image alt attributes, and unknown-article 404s.
-- Desktop hero and era layouts were visually inspected. Mobile layouts were
-  checked at 375px and 320px. The final 320px check reported a 320px document
-  width, no broken loaded images, and the correct active era.
-- Policy-button selection, keyboard selection/focus, system-trace changes, and
-  era navigation were exercised. The mobile dial has a reserved edge gutter.
-- Reduced-motion emulation reported `scroll-behavior: auto` and zero active
-  animations. The photo stack has no autoplay.
-- No-JS structure was checked in server HTML: complete text/images/links,
-  hidden inactive controls, and explanatory `noscript` content. A complete
-  browser run with JavaScript disabled was not confirmed; do not describe it as
-  a passed browser test.
-- Sol reviewed the integrated code and evidence. Two P3 findings were fixed
-  (collection Twitter metadata and a profile worker-boundary statement); the
-  scoped follow-up returned no remaining actionable findings.
-- The profile agent validated GitHub-rendered Markdown, desktop/mobile wrapping,
-  dark appearance, all ten local images, and 18 public repository links. The
-  final wording correction was subsequently reviewed.
+- Final `npm run check` passed: no lint warnings, TypeScript, content validation,
+  and a production build with 20 generated pages and approximately 108 kB home
+  first-load JavaScript.
+- Asset validation covers all four transparent sprite sheets, four distinct
+  populated frames per sheet, geometry and size budgets, plus article images.
+- Isolated Chromium browser checks passed for automatic rotation, pause/resume,
+  keyboard photo navigation, all four pets' reactions and sleep/wake behavior,
+  compact dial interaction, touch at 375px and 320px, 44px controls, no horizontal
+  overflow, and clearance from the edge dial.
+- Reduced-motion browser checks passed: photos stay still until manually changed;
+  pet pose changes work with zero active reaction animations and auto scrolling.
+- A real JavaScript-disabled browser check passed for content, presentation
+  navigation, initial imagery, hidden inactive controls and disabled pet controls.
+- Throttled Previous requests retain the loaded photo; failed Previous and Next
+  requests preserve it and permit retry. Off-screen rotation pause passed.
+- The new talk filter, article, authentic cover, and related engineering-story
+  link passed browser checks. Desktop and mobile captures were visually inspected.
+- Sol's first review found one P2 in pending-image transitions. The fix separates
+  requested and displayed photos. The focused second review passed with no
+  remaining actionable finding, including stale-request and retry checks.
+- Profile: all eleven image references and relative links resolve; referenced
+  images total 906,272 bytes. The presentation photo matches the website asset.
 
-## Limits and handoff
+## Reproduction and scope
 
-- Hosted verification for this exact version is separate from local checks.
-  The existing deployment may require an authenticated Vercel preview session.
-- This pass retains the existing Next 14 runtime. A supported-version upgrade
-  remains separate maintenance; no clean security-audit claim is made.
-- The build reports an existing outdated Browserslist database notice.
-- No live cloud infrastructure, public profile pins, account settings, or
-  production branch was changed as part of implementation.
-- Credential dates with conflicting evidence and unverified role/accuracy claims
-  were omitted. Article event periods and website publication dates are distinct.
+The collaborative preview reported successful resize operations but retained a
+1402px page viewport. Two ineffective attempts were followed by an isolated
+Playwright 1.56.1 browser using installed Brave in headless mode and a fresh
+profile. It did not operate the user's browser session. That test dependency and
+browser screenshots/reports remain under the temporary QA directory, outside
+this repository; no production dependency was introduced.
 
-Local website preview: `http://localhost:3000/`. Production-mode QA uses port
-3100. Profile review shell uses `http://127.0.0.1:8796/` while its server runs.
-Research reports and browser working files remain outside the public repositories.
+The site keeps Next 14; a supported-version framework upgrade remains separate
+maintenance. No screen-reader usability session or security-audit claim is made.
+Article publication dates identify this website edition, separate from event dates.
+Original sources and generation prompts are recorded in `docs/design/`.
+
+The Git repository's default branch is `main`. The existing Vercel production
+integration follows `deployment`; publish approved main changes through a PR to
+that branch and verify the public URLs after the deployment completes.

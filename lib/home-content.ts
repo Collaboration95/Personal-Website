@@ -12,10 +12,19 @@ export const homeFeatures = {
     copy: "Keep, rename, or send to Trash. A small tool for the screenshots that pile up—and an experiment in making on-device naming practical.",
   },
   researchagent: {
-    eyebrow: "ResearchAgent / team prototype",
-    title: "What is good\nevidence worth?",
-    copy: "A research agent with a budget, delivery checks, and a way to challenge bad evidence. Built for SingHacks using a synthetic article corpus and XRPL Testnet.",
-    recognition: "SingHacks finalist · September 2026",
+    eyebrow: "10 October 2026 / AI Tinkerers Singapore",
+    title: "ResearchAgent,\non the main stage.",
+    copy: "I presented our team’s research agent with a wallet: start with free evidence, decide what is worth buying, and check what arrives. A live walkthrough at Singtel 8George, following our SingHacks finalist build.",
+    recognition: "Top three Google Cloud Run demos · US$100 in cloud credits",
+    image: {
+      src: "/project-images/researchagent-main-stage.webp",
+      alt: "ResearchAgent’s answer and spending budget projected beside a presenter at the Singtel podium.",
+      width: 1600,
+      height: 900,
+    },
+    gallery:
+      "https://singapore.aitinkerers.org/meetup/mu_oOS3ivaBeO4/gallery?page=2",
+    slides: "https://collaboration95.github.io/theFastandtheFungible/slides/",
   },
   fitback: {
     eyebrow: "Fitback / SUTD capstone team",

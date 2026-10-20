@@ -127,6 +127,54 @@ export default function Timeline() {
             </div>
           </div>
         </article>
+        <article className="era-spread stage-spread" id="chapter-researchagent">
+          <figure className="stage-photo">
+            <div className="stage-photo__dateline">
+              <span>Main stage</span>
+              <span>Singapore / 10.10.26</span>
+            </div>
+            <Image
+              {...copy.researchagent.image}
+              alt={copy.researchagent.image.alt}
+              sizes="(max-width: 760px) 85vw, 720px"
+            />
+            <figcaption>
+              Presenting ResearchAgent at Singtel 8George.
+              <br />
+              <a
+                href={copy.researchagent.gallery}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Photo: event attendee / AI Tinkerers Singapore ↗
+              </a>
+            </figcaption>
+          </figure>
+          <div className="spread__copy">
+            <p className="eyebrow">{copy.researchagent.eyebrow}</p>
+            <h3>{copy.researchagent.title}</h3>
+            <p>{copy.researchagent.copy}</p>
+            <div className="stage-recognition">
+              <span aria-hidden="true">✳</span>
+              <p>{copy.researchagent.recognition}</p>
+            </div>
+            <StoryLink slug="researchagent-main-stage">
+              The presentation and what came next
+            </StoryLink>
+            <div className="stage-links">
+              <a
+                href={copy.researchagent.slides}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open the slides ↗
+              </a>
+              <StoryLink slug="researchagent-evidence">
+                How the evidence checks work
+              </StoryLink>
+            </div>
+          </div>
+        </article>
         <div
           className="era-spread era-spread--reverse"
           id="chapter-local-first"
@@ -156,18 +204,6 @@ export default function Timeline() {
             </div>
           </div>
         </div>
-        <article className="era-spread" id="chapter-researchagent">
-          <div className="spread__media">
-            <ProjectImage id="researchagent" />
-            <p className="margin-note">{copy.researchagent.recognition}</p>
-          </div>
-          <div className="spread__copy">
-            <p className="eyebrow">{copy.researchagent.eyebrow}</p>
-            <h3>{copy.researchagent.title}</h3>
-            <p>{copy.researchagent.copy}</p>
-            <StoryLink slug="researchagent-evidence" />
-          </div>
-        </article>
         <div className="era-spread lab-notes">
           <div id="chapter-provenance">
             <PolicyWidget />
