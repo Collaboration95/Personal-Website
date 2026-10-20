@@ -1,5 +1,3 @@
-import { links } from "./data";
-
-export type SectionName = (typeof links)[number]["name"];
-
-export type Theme = "light" | "dark";
+export type { Experience, PhotoMoment, Project } from "./data";
+export type { EraTheme } from "./eras";
+export type { JournalArticle, PortfolioProject } from "./journal-types";
