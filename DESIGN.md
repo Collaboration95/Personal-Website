@@ -1,95 +1,74 @@
-# Guru Prasath — Design Direction
+# Guru Prasath — four eras, one story
 
-**Decision date:** 2026-08-22  
-**Working direction:** Warm Paper  
-**Figma source:** [Guru Prasath — Portfolio Direction](https://www.figma.com/design/AQJ6BoMQffEAi9BbgG9mYj)
+Decision: 20 October 2026. The user's latest direction combines real career
+chapters with distinct visual worlds, 3D trinkets, small widgets, an era
+companion, and substantial writing. This supersedes the earlier uniform Warm
+Paper treatment. The hero and farewell retain its warmth.
 
-## Theme decision
+## Story and composition
 
-Warm Paper is the selected direction for the next implementation pass. It keeps
-the soft evening-light feeling, preserves readability, and gives the portfolio
-room for photography and subtle color diffusion without making the interface
-feel generic or overly yellow.
+The page begins with a personal photograph beside a clear statement and direct
+LinkedIn/GitHub links. Visitors then move from current work back through earlier
+chapters. Periods can overlap; they are editorial groupings, not invented job
+boundaries. One central rail connects the desktop journey and moves left on
+phones. Personal photographs interrupt the project rhythm without pretending
+to document an event or project whose association is unverified.
 
-Ember Night is retained as the dark alternative and visual reference. It should
-remain structurally identical to Warm Paper so the two directions can be
-compared without changing layout, typography, imagery, or motion.
+The old standalone principles block and repeated detailed case-study cards are
+replaced by selected project spreads and linked articles. Full explanations
+belong in `/journal/[slug]`; `/projects` holds the wider collection. The homepage
+uses a monitor-like Commons feature, a screenshot print, an evidence demo,
+notes, a learning stamp, a Fitback editorial plate, an engineering notebook,
+and a retro game shelf.
 
-Shadcn Mono and Indigo Dusk were explored and removed from the Figma board. Do
-not bring them back unless the direction is intentionally revisited.
+## Worlds
 
-## Shared composition
-
-- One unified page: photo-led hero followed by the vertical scrolling timeline.
-- No separate intro rail or duplicated introductory section.
-- Transparent cutout portrait in the hero, with the personal statement beside
-  it.
-- LinkedIn and GitHub CTAs directly below the hero paragraph.
-- Projects and personal Instagram photography alternate along the timeline,
-  with captions and a visible central line/rail.
-
-## Interaction requirements
-
-### Edge dial / scroll navigator
-
-Add a small, fixed dial-like navigator at the edge of the viewport. The visual
-cue is a quiet vertical stack of short tick marks, with one active marker that
-tracks the reader's position through the page.
-
-- The dial represents the hero, timeline chapters, and closing/contact area.
-- Scrolling updates the active tick; the active state may change length, weight,
-  color, or shape without becoming visually noisy.
-- Clicking or tapping a tick jumps to its section. Keyboard focus should expose
-  the section name, and the control must have an accessible navigation label.
-- On smaller screens, collapse it into a compact edge or bottom control rather
-  than letting it cover project cards or photography.
-- Use the Warm Paper copper/ink system and restrained diffusion; no yellow/gold
-  treatment.
-
-The dial should be the stable navigation anchor for the small cursor rail. The
-cursor can still morph as the user scrolls, but it should animate around or
-through the dial rather than introduce a competing second navigator.
-
-## Warm Paper tokens
-
-| Token | Value | Use |
+| World | Surface / ink / muted / accent | Typography and objects |
 | --- | --- | --- |
-| Paper | `#F4EEE5` | Primary background |
-| Ink | `#201D1A` | Headings and body text |
-| Copper | `#B9684D` | Primary accent and CTA emphasis |
-| Lilac | `#A995B9` | Soft diffusion and secondary accent |
-| Teal | `#587C79` | Supporting accent |
-| Peach | `#D79B86` | Warm diffusion and image accents |
-| Plum | `#765C72` | Deep supporting accent |
+| Welcome / farewell | `#F3EFE7` / `#262721` / `#66665D` / `#98543D` | Outfit, Figtree, system Georgia emphasis; photo stack and keycap |
+| Lab | `#25282B` / `#F4F0E6` / `#BEC1BA` / `#C8B6ED` | Clear sans headings, instrument labels; lilac resin Pip, monitor, policy sketch |
+| Studio | `#EDDCD1` / `#3D302B` / `#705A50` / `#984A37` | Georgia editorial headings; ceramic Pip, print plate, sculpted input tokens |
+| Field | `#DBE4DF` / `#203F3C` / `#4C645C` / `#286354` | Mono headings over a quiet drafting grid; enamel Pip and raised system buttons |
+| Playground | `#EEEACA` / `#34432E` / `#5B684E` / `#566B3B` | Mono headings and sage toy surfaces; blocky Pip, CRT-like frame, cartridges |
 
-Warm Paper should feel atmospheric through restrained radial diffusion and
-softly layered color spots. Keep text contrast high; avoid low-contrast dark
-text on dark surfaces.
+Figtree remains the body face. Outfit and JetBrains Mono are the existing
+font assets; the editorial era adds no downloaded serif family. Each era owns
+its scoped tokens in CSS. Adjacent worlds remain readable at their boundary;
+scrolling does not recolor the whole document or hide unrevealed content.
 
-## Ember Night tokens
+## Motion and interaction
 
-| Token | Value | Use |
-| --- | --- | --- |
-| Night | `#121214` | Primary background |
-| Surface | `#1C1C20` | Cards and elevated sections |
-| Surface 2 | `#242429` | Secondary surfaces |
-| Foreground | `#F4F4F5` | Headings and body text |
-| Muted | `#8E8E98` | Supporting text |
-| Copper | `#D0785C` | Primary accent and CTA emphasis |
-| Border | `#3F3F46` | Dividers and card edges |
-| Peach | `#D79B86` | Warm secondary accent |
-| Lilac | `#B7A5C9` | Secondary accent |
+The photo stack is user-controlled and reserves its geometry. It has no timer.
+The policy example switches between two documented fixture routes; the system
+trace exposes the purpose of each boundary. Both use native buttons and text
+feedback. These are illustrative widgets, not live infrastructure or payments.
 
-## Type and tone
+Pip is a generated transparent image with a consistent silhouette and baseline,
+not a canvas runtime. Era headers show the material variant; the small desktop
+dial companion changes with the active era. A failed decorative image is
+omitted without affecting content. Desktop hover can briefly tilt an object;
+there are no perpetual loops, scroll locks, cursor capture, or sound.
 
-- **Outfit** for the wordmark, headings, and large statements.
-- **Figtree** for body copy and supporting descriptions.
-- **JetBrains Mono** for metadata, labels, dates, and timeline markers.
-- Keep the voice direct, personal, observant, and slightly playful rather than
-  polished into generic agency language.
+Reduced motion disables transitions and smooth scrolling. Static layouts,
+photographs, text, anchors, and article links work without JavaScript. Controls
+that need hydration stay hidden until usable; the widgets include explanatory
+no-script text. All interactive controls retain visible focus.
 
-## Implementation boundary
+The dial has six anchors: hello, four eras, contact. Scroll state follows the
+last section crossing a reading line and does not move focus. Explicit keyboard
+activation focuses the target section. On phones the dial stays at the edge with a dedicated content gutter, so it does not cover articles or photographs. Six tall targets keep each chapter reachable.
 
-This file records the design decisions only. The codebase has not been
-re-themed yet; the next implementation pass should apply Warm Paper first and
-keep the same content structure and interaction model.
+## Imagery and provenance
+
+Use real, source-backed project figures and the user's existing photo exports.
+Do not create fake screenshots or imply that personal photo dates/people match
+particular projects. Generated artwork is confined to the fictional companion.
+The four 512px alpha WebPs total about 134 KB; project images are optimized and
+lazy-loaded. Exact sources and prompts are recorded in the design notes.
+
+## GitHub counterpart
+
+The profile is a personal project shelf with varied story forms: a room image,
+a before/after pair, a bounded proof figure, a three-image walkthrough, short
+personal tool notes, a camera prototype, and earlier game saves. No technical
+skills catalogue, résumé structure, external stats widget, or badge wall.
