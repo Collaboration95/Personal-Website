@@ -81,7 +81,7 @@ for (const article of articles) {
   );
   assert.ok(themes.has(article.era), `Unknown era: ${article.slug}`);
   assert.ok(
-    ["project", "hackathon", "certification"].includes(article.kind),
+    ["project", "hackathon", "certification", "talk"].includes(article.kind),
     `Unknown category: ${article.slug}`,
   );
   assert.ok(
@@ -144,7 +144,35 @@ for (const { theme } of eras) {
   );
   assert.equal(metadata.width, 512);
   assert.equal(metadata.height, 512);
+  const sheet = `public/companions/sprites/pip-${theme}.webp`;
+  const spriteMetadata = await sharp(sheet).metadata();
+  assert.equal(spriteMetadata.width, 512, `Invalid sprite width: ${theme}`);
+  assert.equal(spriteMetadata.height, 512, `Invalid sprite height: ${theme}`);
+  assert.ok(spriteMetadata.hasAlpha, `Missing sprite transparency: ${theme}`);
+  assert.ok(
+    fs.statSync(sheet).size < 180000,
+    `Sprite exceeds budget: ${theme}`,
+  );
+  const frames = [];
+  for (const [left, top] of [
+    [0, 0],
+    [256, 0],
+    [0, 256],
+    [256, 256],
+  ]) {
+    const frame = await sharp(sheet)
+      .extract({ left, top, width: 256, height: 256 })
+      .ensureAlpha()
+      .raw()
+      .toBuffer();
+    assert.ok(
+      frame.some((value, index) => index % 4 === 3 && value > 128),
+      `Empty sprite frame: ${theme} ${left},${top}`,
+    );
+    frames.push(frame.toString("base64"));
+  }
+  assert.equal(new Set(frames).size, 4, `Duplicate sprite poses: ${theme}`);
 }
 console.log(
-  `Content integrity passed: ${projects.length} projects, ${published.length} articles, ${images.size} images, ${eras.length} transparent companions; draft exclusion verified.`,
+  `Content integrity passed: ${projects.length} projects, ${published.length} articles, ${images.size} images, ${eras.length} transparent companions and sprite sheets; draft exclusion verified.`,
 );

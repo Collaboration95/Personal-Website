@@ -7,17 +7,20 @@ The four era companions and six new public project images are documented in
 [project image sources](docs/design/project-image-sources.md). `public/social-card.png`
 is a repository-drawn typographic social preview, not a project screenshot.
 
-The hero now uses a manually browsed, fixed-geometry photo stack. Several of the
+The hero uses all fourteen supplied images in a pausable, fixed-geometry photo stack. Several of the
 supplied photos also form timeline interludes; their captions do not invent
 dates or associations with particular projects. The original asset records
 below preserve provenance.
+
+The follow-up adds [sixteen interactive poses](docs/design/interactive-companion-assets.md)
+and [two authentic ResearchAgent presentation photos](docs/design/researchagent-presentation-sources.md).
 
 ## Original asset records
 
 | Asset | Source | Treatment | Status |
 | --- | --- | --- | --- |
 | `public/intro-alone.jpeg` | Historical repository commit `cae50a4` | Editorial portrait crop with explicit dimensions and descriptive alt text | Restored |
-| `public/portrait-reel/*.jpg` | User-supplied `/Desktop/personal-website-images/` set | Optimized, auto-oriented, metadata-stripped personal photographs, reused in the manual photo stack and timeline | Added |
+| `public/portrait-reel/*.jpg` | User-supplied `/Desktop/personal-website-images/` set | Optimized, auto-oriented, metadata-stripped personal photographs, reused in the rotating photo stack and timeline | Added |
 | `public/detectt-posenet-setup.png` | Public `Collaboration95/DetectT` repository | DetectT pose-detection prototype demo for the archive card | Added |
 | `public/HealthMate.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |
 | `public/InvoiceHub.png` | Historical repository commit `cae50a4` | Lazy responsive project image | Restored |

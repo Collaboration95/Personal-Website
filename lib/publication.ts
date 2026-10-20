@@ -1,7 +1,7 @@
 import { projects } from "./projects";
 import type { JournalArticle } from "./journal-types";
 
-export function articleCover(article: JournalArticle) {
+export function articleCover(article: JournalArticle): JournalArticle["cover"] {
   return (
     article.cover ??
     projects.find(
